@@ -1,0 +1,168 @@
+$OVEX_REV;
+rev = 1.5;
+$GLOBAL;
+* correlated from input file sim_1.input
+    ref $EOP = EOP_DIFX_INPUT;
+*--------------------------------------------------------
+  ref $EXPER = sim;
+*--------------------------------------------------------
+$EXPER;
+*--------------------------------------------------------
+def sim;
+  exper_name = sim;
+  exper_description = baseband_data_simulation;
+  exper_nominal_start = 2020y028d17h30m00s;
+  exper_nominal_stop = 2020y028d17h30m01s;
+  scheduler_name = your_username;
+    target_correlator = difx;
+* software = VieRDS;
+* software_version = 43db9992737c3feb4540e49b4d5eb6f2064769dc;
+enddef;
+*--------------------------------------------------------
+$STATION;
+*--------------------------------------------------------
+def S1;
+  ref $SITE = HARTRAO;
+  ref $ANTENNA = HARTRAO;
+    ref $CLOCK = S1;
+enddef;
+def S2;
+  ref $SITE = WARK12M;
+  ref $ANTENNA = WARK12M;
+    ref $CLOCK = S2;
+enddef;
+*--------------------------------------------------------
+$MODE;
+*--------------------------------------------------------
+def sim-0001;
+  *--------------------------------------------------------
+  *--------------------------------------------------------
+    ref $FREQ = ant00:S1;
+    ref $FREQ = ant01:S2;
+    ref $BBC = bbcs;
+    ref $IF = ifs;
+    ref $TRACKS = trax_1bit:S1:S2;
+enddef;
+*--------------------------------------------------------
+$SITE;
+def HARTRAO;
+  site_type = fixed;
+  site_name = HARTRAO;
+  site_ID = S1;
+  site_position = 5.085443e+06 m : 2.668264e+06 m : -2.768697e+06 m;
+  site_position_ref = sked_position.cat;
+  occupation_code = 0000000;
+  mk4_site_ID = L;
+  enddef;
+def WARK12M;
+  site_type = fixed;
+  site_name = WARK12M;
+  site_ID = S2;
+  site_position = -5.115324e+06 m : 4.778433e+05 m : -3.767193e+06 m;
+  site_position_ref = sked_position.cat;
+  occupation_code = 0000000;
+  mk4_site_ID = W;
+  enddef;
+$ANTENNA;
+*--------------------------------------------------------
+def HARTRAO;
+  axis_type = az : el; * hardcoded
+  axis_offset = el: 0 m; * hardcoded
+  pointing_sector = &n     :  az :  0 deg :  360 deg :  el :    5 deg :   89 deg ; * hardcoded to arbitrary value not sure if necessary
+enddef;
+def WARK12M;
+  axis_type = az : el; * hardcoded
+  axis_offset = el: 0 m; * hardcoded
+  pointing_sector = &n     :  az :  0 deg :  360 deg :  el :    5 deg :   89 deg ; * hardcoded to arbitrary value not sure if necessary
+enddef;
+*--------------------------------------------------------
+$SCHED;
+scan SIM001;
+  start = 2020y028d17h30m00s;
+  mode = sim-0001;
+  source = 2358+189;
+  station = S1 : 0 sec : 1 sec : 0 ft: 1A : &n : 1;
+  station = S2 : 0 sec : 1 sec : 0 ft: 1A : &n : 1;
+    fourfit_reftime = 2020y028d17h30m00s;
+endscan;
+$FREQ;
+* Generated from DiFX input by difx2mark4
+*
+  def ant00;
+   chan_def = X00UR : :   3028.400000 MHz : U :     8.000000 MHz : &Ch00 : &BBCR0;
+    sample_rate =  16.0 Ms/sec;
+  enddef;
+  def ant01;
+   chan_def = X00UR : :   3028.400000 MHz : U :     8.000000 MHz : &Ch00 : &BBCR0;
+    sample_rate =  16.0 Ms/sec;
+  enddef;
+$BBC;
+  def bbcs;
+    BBC_assign = &BBCR0  : 02 : &IFR0;
+    BBC_assign = &BBCR1  : 04 : &IFR1;
+    BBC_assign = &BBCR5  : 06 : &IFR5;
+    BBC_assign = &BBCR10 : 08 : &IFR10;
+    BBC_assign = &BBCR200: 10 : &IFR200;
+  enddef;
+$IF;
+  def ifs;
+    if_def = &IFR0  : 2N : R : 10000.0 MHz : U :  0 MHz : 0 Hz;
+    if_def = &IFR1  : 2N : R : 10000.0 MHz : U :  1 MHz : 0 Hz;
+    if_def = &IFR5  : 2N : R : 10000.0 MHz : U :  5 MHz : 0 Hz;
+    if_def = &IFR10 : 2N : R : 10000.0 MHz : U : 10 MHz : 0 Hz;
+    if_def = &IFR200: 2N : R : 10000.0 MHz : U :200 MHz : 0 Hz;
+  enddef;
+$TRACKS;
+  def trax_1bit;
+    bits/sample = 1;
+  enddef;
+  def trax_2bit;
+    bits/sample = 2;
+  enddef;
+$SOURCE;
+* Generated from DiFX input by difx2mark4
+def 2358+189;
+ source_name = 2358+189;
+ ra = 00h01m08.6215701s; dec =  19d14'33.801741"; ref_coord_frame = J2000;
+enddef;
+
+$CLOCK;
+* Generated from DiFX input by difx2mark4
+ def S1; clock_early = 2020y028d17h30m00s :-0.000 usec : 2020y028d17h30m00s : -0.000000e+00 ; enddef;
+ def S2; clock_early = 2020y028d17h30m00s :-0.000 usec : 2020y028d17h30m00s : -0.000000e+00 ; enddef;
+
+$EOP;
+* Generated from DiFX input by difx2mark4
+def EOP_DIFX_INPUT;
+enddef;
+
+$EVEX_REV;
+ rev = 1.0;
+$EVEX;
+ def 1234_std;
+ corr_exp#   = 1234;
+ ovex_file   = dummy;
+ cvex_file   = dummy;
+ svex_file   = dummy;
+ AP_length =  0.0256 sec;
+ speedup_factor = 1.0;
+ ref $CORR_CONFIG = CDUM;
+ ref $SU_CONFIG  = SDUM;
+ enddef;
+$IVEX_REV;
+ rev = 1.0;
+$CORR_INIT;
+ def INIT_DUMMY;
+ system_tempo = 1.00;
+ bocf_period = 8192;
+*subintNS = 256000;
+ ref $PBS_INIT = PBS_DUMMY;
+ enddef;
+$PBS_INIT;
+ def PBS_DUMMY;
+ enddef;
+$LVEX_REV;
+ rev = 1.0;
+$LOG;
+ def log_dummy;
+ enddef;

@@ -1,0 +1,33 @@
+setup:
+  zero_bl: 1
+s1:
+  date_vec: [2020,1,28,17,30,00]
+  station_name: S1
+  station_name_8character: KOKEE12M
+  station_name_trf_coord: K2
+  X_trf: [4.0755139837000000e+06,9.317353092000000e+05,4.801629401000000e+06]
+  sampling_frequency: 8
+  scan_length: 1
+  fluxdensity_targetsource: 50
+  fluxdensity_system: 50
+  f0: [8212.99, 8252.99, 8352.99, 8512.99, 8732.99, 8852.99, 8892.99, 8932.99]
+  number_of_bits: 2
+  signal_type_target_source: gaussian-white-noise
+  source_name: 0026+892
+  bandpass_filter_name: default
+s2:
+  date_vec: [2020,1,28,17,30,00]
+  station_name: S2
+  station_name_8character: YEBES12M
+  station_name_trf_coord: Ys
+  sampling_frequency: 8
+  scan_length: 1
+  fluxdensity_targetsource: 10
+  fluxdensity_system: 50
+  f0: [8212.99, 8252.99, 8352.99, 8512.99, 8732.99, 8852.99, 8892.99, 8932.99]
+  number_of_bits: 2
+  source_name: 0026+892
+  bandpass_filter_name: default
+
+
+

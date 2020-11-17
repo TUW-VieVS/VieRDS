@@ -1,0 +1,57 @@
+vex=aua055.corr.vex
+antennas = Hh,Ho,Wa,Ww,Yg
+threadsFile=threads
+singleScan=True
+SETUP default
+{
+  tInt = 1 		# [sec] integration time
+  nChan = 64
+  guardNS = 26000
+}
+
+RULE default
+{
+  setup=default
+}
+
+ ANTENNA Hh
+{
+  filelist = hh.filelist
+  #clockOffset= -3.941900
+  #clockRate = -4.864e-08
+  #clockEpoch = 2019y232d17h30m00s
+  toneSelection=all
+}
+ ANTENNA Ho
+{
+  filelist = ho.filelist
+  #clockOffset= -9.626000
+  #clockRate = 4.859e-08
+  #clockEpoch = 2019y232d17h30m00s
+  toneSelection=all
+}
+ ANTENNA Wa
+{
+  filelist = wa.filelist
+  #clockOffset= 10.222000
+  #clockRate = 1.5e-06
+  #clockEpoch = 2019y232d17h30m00s
+  toneSelection=all
+}
+ ANTENNA Ww
+{
+  filelist = ww.filelist
+  #clockOffset= 3.756200
+  #clockRate = 1.584e-06
+  #clockEpoch = 2019y232d17h30m00s
+  toneSelection=all
+}
+ ANTENNA Yg
+{
+  filelist = yg.filelist
+  #clockOffset= -19.861800
+  #clockRate = -8.66e-07
+  #clockEpoch = 2019y232d17h30m00s
+  toneSelection=all
+}
+

@@ -1,0 +1,493 @@
+VEX_rev = 1.5;
+$GLOBAL;
+*--------------------------------------------------------
+  ref $EXPER = sim;
+*--------------------------------------------------------
+$EXPER;
+*--------------------------------------------------------
+def sim;
+  exper_name = sim;
+  exper_description = baseband_data_simulation;
+  exper_nominal_start = 2020y028d17h30m00s;
+  exper_nominal_stop = 2020y028d17h30m01s;
+  scheduler_name = your_username;
+  target_correlator = your_target_correlator;
+* software = VieRDS;
+* software_version = 43db9992737c3feb4540e49b4d5eb6f2064769dc;
+enddef;
+*--------------------------------------------------------
+$STATION;
+*--------------------------------------------------------
+def S1;
+  ref $SITE = KOKEE12M;
+  ref $ANTENNA = KOKEE12M;
+  ref $DAS = KOKEE12M;
+enddef;
+def S2;
+  ref $SITE = WETT12M;
+  ref $ANTENNA = WETT12M;
+  ref $DAS = WETT12M;
+enddef;
+*--------------------------------------------------------
+$MODE;
+*--------------------------------------------------------
+def sim-0001;
+  *--------------------------------------------------------
+  ref $FREQ = KOKEE12M : S1 ;
+  ref $BBC = KOKEE12M : S1 ;
+  ref $IF = KOKEE12M : S1 ;
+  ref $TRACKS = KOKEE12M : S1 ;
+  ref $PASS_ORDER = passOrder : KOKEE12M ;
+  ref $PASS_ORDER = passOrder : S1 ;
+  ref $ROLL = NO_ROLL : KOKEE12M ;
+  ref $ROLL = NO_ROLL : S1 ;
+  ref $PHASE_CAL_DETECT = Standard : KOKEE12M ;
+  ref $PHASE_CAL_DETECT = Standard : S1 ;
+  *--------------------------------------------------------
+  ref $FREQ = WETT12M : S2 ;
+  ref $BBC = WETT12M : S2 ;
+  ref $IF = WETT12M : S2 ;
+  ref $TRACKS = WETT12M : S2 ;
+  ref $PASS_ORDER = passOrder : WETT12M ;
+  ref $PASS_ORDER = passOrder : S2 ;
+  ref $ROLL = NO_ROLL : WETT12M ;
+  ref $ROLL = NO_ROLL : S2 ;
+  ref $PHASE_CAL_DETECT = Standard : WETT12M ;
+  ref $PHASE_CAL_DETECT = Standard : S2 ;
+enddef;
+*--------------------------------------------------------
+$SITE;
+*--------------------------------------------------------
+def KOKEE12M;
+  site_type = fixed;
+  site_name = KOKEE12M;
+  site_ID = S1;
+  site_position = 4.075514e+06 m : 9.317353e+05 m : 4.801629e+06 m;
+  site_position_ref = sked_position.cat;
+  occupation_code = 0000000;
+  enddef;
+def WETT12M;
+  site_type = fixed;
+  site_name = WETT12M;
+  site_ID = S2;
+  site_position = 4.075514e+06 m : 9.317353e+05 m : 4.801629e+06 m;
+  site_position_ref = sked_position.cat;
+  occupation_code = 0000000;
+  enddef;
+*--------------------------------------------------------
+$ANTENNA;
+*--------------------------------------------------------
+def KOKEE12M;
+  axis_type = az : el; * hardcoded
+  axis_offset = 0 m; * hardcoded
+  pointing_sector = &n     :  az :  0 deg :  360 deg :  el :    5 deg :   89 deg ; * hardcoded to arbitrary value not sure if necessary
+enddef;
+def WETT12M;
+  axis_type = az : el; * hardcoded
+  axis_offset = 0 m; * hardcoded
+  pointing_sector = &n     :  az :  0 deg :  360 deg :  el :    5 deg :   89 deg ; * hardcoded to arbitrary value not sure if necessary
+enddef;
+*--------------------------------------------------------
+$DAS;
+*--------------------------------------------------------
+def S1;
+  record_transport_type = Flexbuff;
+enddef;
+def S2;
+  record_transport_type = Flexbuff;
+enddef;
+*--------------------------------------------------------
+$SOURCE;
+*--------------------------------------------------------
+def 0026+892;
+  source_name = 0026+892;
+  source_type = star;
+  ra = 03h49m10.98708s;
+  dec = 00d00'0.00000";
+  ref_coord_frame = J2000;
+  ra_rate = 0 asec/yr; * hard coded 
+  dec_rate = 0 asec/yr; * hard coded 
+enddef;
+*--------------------------------------------------------
+$BBC;
+*--------------------------------------------------------
+def KOKEE12M;
+*                     BBC    Physical   IF
+*                      ID      BBC#     ID
+  BBC_assign = &BBC01 : 01 : &IF_A01;
+  BBC_assign = &BBC02 : 02 : &IF_A02;
+  BBC_assign = &BBC03 : 03 : &IF_A03;
+  BBC_assign = &BBC04 : 04 : &IF_A04;
+  BBC_assign = &BBC05 : 05 : &IF_A05;
+  BBC_assign = &BBC06 : 06 : &IF_A06;
+  BBC_assign = &BBC07 : 07 : &IF_A07;
+  BBC_assign = &BBC08 : 08 : &IF_A08;
+  BBC_assign = &BBC09 : 09 : &IF_A09;
+  BBC_assign = &BBC10 : 10 : &IF_A10;
+  BBC_assign = &BBC11 : 11 : &IF_A11;
+  BBC_assign = &BBC12 : 12 : &IF_A12;
+  BBC_assign = &BBC13 : 13 : &IF_A13;
+  BBC_assign = &BBC14 : 14 : &IF_A14;
+  BBC_assign = &BBC15 : 15 : &IF_A15;
+  BBC_assign = &BBC16 : 16 : &IF_A16;
+  BBC_assign = &BBC17 : 17 : &IF_A17;
+  BBC_assign = &BBC18 : 18 : &IF_A18;
+  BBC_assign = &BBC19 : 19 : &IF_A19;
+  BBC_assign = &BBC20 : 20 : &IF_A20;
+  BBC_assign = &BBC21 : 21 : &IF_A21;
+  BBC_assign = &BBC22 : 22 : &IF_A22;
+  BBC_assign = &BBC23 : 23 : &IF_A23;
+  BBC_assign = &BBC24 : 24 : &IF_A24;
+  BBC_assign = &BBC25 : 25 : &IF_A25;
+  BBC_assign = &BBC26 : 26 : &IF_A26;
+  BBC_assign = &BBC27 : 27 : &IF_A27;
+  BBC_assign = &BBC28 : 28 : &IF_A28;
+  BBC_assign = &BBC29 : 29 : &IF_A29;
+  BBC_assign = &BBC30 : 30 : &IF_A30;
+  BBC_assign = &BBC31 : 31 : &IF_A31;
+  BBC_assign = &BBC32 : 32 : &IF_A32;
+enddef;
+def WETT12M;
+*                     BBC    Physical   IF
+*                      ID      BBC#     ID
+  BBC_assign = &BBC01 : 01 : &IF_A01;
+  BBC_assign = &BBC02 : 02 : &IF_A02;
+  BBC_assign = &BBC03 : 03 : &IF_A03;
+  BBC_assign = &BBC04 : 04 : &IF_A04;
+  BBC_assign = &BBC05 : 05 : &IF_A05;
+  BBC_assign = &BBC06 : 06 : &IF_A06;
+  BBC_assign = &BBC07 : 07 : &IF_A07;
+  BBC_assign = &BBC08 : 08 : &IF_A08;
+  BBC_assign = &BBC09 : 09 : &IF_A09;
+  BBC_assign = &BBC10 : 10 : &IF_A10;
+  BBC_assign = &BBC11 : 11 : &IF_A11;
+  BBC_assign = &BBC12 : 12 : &IF_A12;
+  BBC_assign = &BBC13 : 13 : &IF_A13;
+  BBC_assign = &BBC14 : 14 : &IF_A14;
+  BBC_assign = &BBC15 : 15 : &IF_A15;
+  BBC_assign = &BBC16 : 16 : &IF_A16;
+  BBC_assign = &BBC17 : 17 : &IF_A17;
+  BBC_assign = &BBC18 : 18 : &IF_A18;
+  BBC_assign = &BBC19 : 19 : &IF_A19;
+  BBC_assign = &BBC20 : 20 : &IF_A20;
+  BBC_assign = &BBC21 : 21 : &IF_A21;
+  BBC_assign = &BBC22 : 22 : &IF_A22;
+  BBC_assign = &BBC23 : 23 : &IF_A23;
+  BBC_assign = &BBC24 : 24 : &IF_A24;
+  BBC_assign = &BBC25 : 25 : &IF_A25;
+  BBC_assign = &BBC26 : 26 : &IF_A26;
+  BBC_assign = &BBC27 : 27 : &IF_A27;
+  BBC_assign = &BBC28 : 28 : &IF_A28;
+  BBC_assign = &BBC29 : 29 : &IF_A29;
+  BBC_assign = &BBC30 : 30 : &IF_A30;
+  BBC_assign = &BBC31 : 31 : &IF_A31;
+  BBC_assign = &BBC32 : 32 : &IF_A32;
+enddef;
+*--------------------------------------------------------
+$IF;
+*--------------------------------------------------------
+def KOKEE12M;
+  if_def = &IF_A01 : A1 : R : 3032.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A02 : A2 : R : 3064.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A03 : A3 : R : 3096.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A04 : A4 : R : 3224.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A05 : A5 : R : 3320.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A06 : A6 : R : 3384.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A07 : A7 : R : 3448.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A08 : A8 : R : 3480.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A09 : A9 : R : 5272.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A10 : A10 : R : 5304.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A11 : A11 : R : 5336.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A12 : A12 : R : 5464.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A13 : A13 : R : 5560.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A14 : A14 : R : 5624.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A15 : A15 : R : 5688.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A16 : A16 : R : 5720.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A17 : A17 : R : 6392.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A18 : A18 : R : 6424.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A19 : A19 : R : 6456.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A20 : A20 : R : 6584.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A21 : A21 : R : 6680.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A22 : A22 : R : 6744.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A23 : A23 : R : 6808.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A24 : A24 : R : 6840.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A25 : A25 : R : 10232.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A26 : A26 : R : 10264.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A27 : A27 : R : 10296.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A28 : A28 : R : 10424.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A29 : A29 : R : 10520.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A30 : A30 : R : 10584.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A31 : A31 : R : 10648.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A32 : A32 : R : 10680.150000 MHz : U : 0.000000 MHz ;
+enddef;
+def WETT12M;
+  if_def = &IF_A01 : A1 : R : 3032.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A02 : A2 : R : 3064.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A03 : A3 : R : 3096.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A04 : A4 : R : 3224.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A05 : A5 : R : 3320.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A06 : A6 : R : 3384.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A07 : A7 : R : 3448.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A08 : A8 : R : 3480.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A09 : A9 : R : 5272.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A10 : A10 : R : 5304.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A11 : A11 : R : 5336.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A12 : A12 : R : 5464.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A13 : A13 : R : 5560.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A14 : A14 : R : 5624.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A15 : A15 : R : 5688.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A16 : A16 : R : 5720.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A17 : A17 : R : 6392.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A18 : A18 : R : 6424.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A19 : A19 : R : 6456.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A20 : A20 : R : 6584.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A21 : A21 : R : 6680.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A22 : A22 : R : 6744.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A23 : A23 : R : 6808.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A24 : A24 : R : 6840.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A25 : A25 : R : 10232.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A26 : A26 : R : 10264.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A27 : A27 : R : 10296.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A28 : A28 : R : 10424.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A29 : A29 : R : 10520.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A30 : A30 : R : 10584.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A31 : A31 : R : 10648.150000 MHz : U : 0.000000 MHz ;
+  if_def = &IF_A32 : A32 : R : 10680.150000 MHz : U : 0.000000 MHz ;
+enddef;
+*--------------------------------------------------------
+$TRACKS;
+*--------------------------------------------------------
+def KOKEE12M;
+  fanout_def =    A : &CH01 : sign : 1 : 01;
+  fanout_def =    A : &CH02 : sign : 1 : 02;
+  fanout_def =    A : &CH03 : sign : 1 : 03;
+  fanout_def =    A : &CH04 : sign : 1 : 04;
+  fanout_def =    A : &CH05 : sign : 1 : 05;
+  fanout_def =    A : &CH06 : sign : 1 : 06;
+  fanout_def =    A : &CH07 : sign : 1 : 07;
+  fanout_def =    A : &CH08 : sign : 1 : 08;
+  fanout_def =    A : &CH09 : sign : 1 : 09;
+  fanout_def =    A : &CH10 : sign : 1 : 10;
+  fanout_def =    A : &CH11 : sign : 1 : 11;
+  fanout_def =    A : &CH12 : sign : 1 : 12;
+  fanout_def =    A : &CH13 : sign : 1 : 13;
+  fanout_def =    A : &CH14 : sign : 1 : 14;
+  fanout_def =    A : &CH15 : sign : 1 : 15;
+  fanout_def =    A : &CH16 : sign : 1 : 16;
+  fanout_def =    A : &CH17 : sign : 1 : 17;
+  fanout_def =    A : &CH18 : sign : 1 : 18;
+  fanout_def =    A : &CH19 : sign : 1 : 19;
+  fanout_def =    A : &CH20 : sign : 1 : 20;
+  fanout_def =    A : &CH21 : sign : 1 : 21;
+  fanout_def =    A : &CH22 : sign : 1 : 22;
+  fanout_def =    A : &CH23 : sign : 1 : 23;
+  fanout_def =    A : &CH24 : sign : 1 : 24;
+  fanout_def =    A : &CH25 : sign : 1 : 25;
+  fanout_def =    A : &CH26 : sign : 1 : 26;
+  fanout_def =    A : &CH27 : sign : 1 : 27;
+  fanout_def =    A : &CH28 : sign : 1 : 28;
+  fanout_def =    A : &CH29 : sign : 1 : 29;
+  fanout_def =    A : &CH30 : sign : 1 : 30;
+  fanout_def =    A : &CH31 : sign : 1 : 31;
+  fanout_def =    A : &CH32 : sign : 1 : 32;
+  track_frame_format = VDIF8032;
+enddef;
+def WETT12M;
+  fanout_def =    A : &CH01 : sign : 1 : 01;
+  fanout_def =    A : &CH02 : sign : 1 : 02;
+  fanout_def =    A : &CH03 : sign : 1 : 03;
+  fanout_def =    A : &CH04 : sign : 1 : 04;
+  fanout_def =    A : &CH05 : sign : 1 : 05;
+  fanout_def =    A : &CH06 : sign : 1 : 06;
+  fanout_def =    A : &CH07 : sign : 1 : 07;
+  fanout_def =    A : &CH08 : sign : 1 : 08;
+  fanout_def =    A : &CH09 : sign : 1 : 09;
+  fanout_def =    A : &CH10 : sign : 1 : 10;
+  fanout_def =    A : &CH11 : sign : 1 : 11;
+  fanout_def =    A : &CH12 : sign : 1 : 12;
+  fanout_def =    A : &CH13 : sign : 1 : 13;
+  fanout_def =    A : &CH14 : sign : 1 : 14;
+  fanout_def =    A : &CH15 : sign : 1 : 15;
+  fanout_def =    A : &CH16 : sign : 1 : 16;
+  fanout_def =    A : &CH17 : sign : 1 : 17;
+  fanout_def =    A : &CH18 : sign : 1 : 18;
+  fanout_def =    A : &CH19 : sign : 1 : 19;
+  fanout_def =    A : &CH20 : sign : 1 : 20;
+  fanout_def =    A : &CH21 : sign : 1 : 21;
+  fanout_def =    A : &CH22 : sign : 1 : 22;
+  fanout_def =    A : &CH23 : sign : 1 : 23;
+  fanout_def =    A : &CH24 : sign : 1 : 24;
+  fanout_def =    A : &CH25 : sign : 1 : 25;
+  fanout_def =    A : &CH26 : sign : 1 : 26;
+  fanout_def =    A : &CH27 : sign : 1 : 27;
+  fanout_def =    A : &CH28 : sign : 1 : 28;
+  fanout_def =    A : &CH29 : sign : 1 : 29;
+  fanout_def =    A : &CH30 : sign : 1 : 30;
+  fanout_def =    A : &CH31 : sign : 1 : 31;
+  fanout_def =    A : &CH32 : sign : 1 : 32;
+  track_frame_format = VDIF8032;
+enddef;
+*--------------------------------------------------------
+$FREQ;
+*--------------------------------------------------------
+def KOKEE12M;
+*                 Band    Sky freq    Net    Chan       Chan     BBC   Phase-cal
+*                  Id    at 0Hz BBC    SB     BW         ID       ID       ID 
+  chan_def = &S :  3032.15 MHz : U : 0.50 MHz : &CH01 : &BBC01 : &U_cal;
+  chan_def = &S :  3064.15 MHz : U : 0.50 MHz : &CH02 : &BBC02 : &U_cal;
+  chan_def = &S :  3096.15 MHz : U : 0.50 MHz : &CH03 : &BBC03 : &U_cal;
+  chan_def = &S :  3224.15 MHz : U : 0.50 MHz : &CH04 : &BBC04 : &U_cal;
+  chan_def = &S :  3320.15 MHz : U : 0.50 MHz : &CH05 : &BBC05 : &U_cal;
+  chan_def = &S :  3384.15 MHz : U : 0.50 MHz : &CH06 : &BBC06 : &U_cal;
+  chan_def = &S :  3448.15 MHz : U : 0.50 MHz : &CH07 : &BBC07 : &U_cal;
+  chan_def = &S :  3480.15 MHz : U : 0.50 MHz : &CH08 : &BBC08 : &U_cal;
+  chan_def = &C :  5272.15 MHz : U : 0.50 MHz : &CH09 : &BBC09 : &U_cal;
+  chan_def = &C :  5304.15 MHz : U : 0.50 MHz : &CH10 : &BBC10 : &U_cal;
+  chan_def = &C :  5336.15 MHz : U : 0.50 MHz : &CH11 : &BBC11 : &U_cal;
+  chan_def = &C :  5464.15 MHz : U : 0.50 MHz : &CH12 : &BBC12 : &U_cal;
+  chan_def = &C :  5560.15 MHz : U : 0.50 MHz : &CH13 : &BBC13 : &U_cal;
+  chan_def = &C :  5624.15 MHz : U : 0.50 MHz : &CH14 : &BBC14 : &U_cal;
+  chan_def = &C :  5688.15 MHz : U : 0.50 MHz : &CH15 : &BBC15 : &U_cal;
+  chan_def = &C :  5720.15 MHz : U : 0.50 MHz : &CH16 : &BBC16 : &U_cal;
+  chan_def = &C :  6392.15 MHz : U : 0.50 MHz : &CH17 : &BBC17 : &U_cal;
+  chan_def = &C :  6424.15 MHz : U : 0.50 MHz : &CH18 : &BBC18 : &U_cal;
+  chan_def = &C :  6456.15 MHz : U : 0.50 MHz : &CH19 : &BBC19 : &U_cal;
+  chan_def = &C :  6584.15 MHz : U : 0.50 MHz : &CH20 : &BBC20 : &U_cal;
+  chan_def = &C :  6680.15 MHz : U : 0.50 MHz : &CH21 : &BBC21 : &U_cal;
+  chan_def = &C :  6744.15 MHz : U : 0.50 MHz : &CH22 : &BBC22 : &U_cal;
+  chan_def = &C :  6808.15 MHz : U : 0.50 MHz : &CH23 : &BBC23 : &U_cal;
+  chan_def = &C :  6840.15 MHz : U : 0.50 MHz : &CH24 : &BBC24 : &U_cal;
+  chan_def = &X :  10232.15 MHz : U : 0.50 MHz : &CH25 : &BBC25 : &U_cal;
+  chan_def = &X :  10264.15 MHz : U : 0.50 MHz : &CH26 : &BBC26 : &U_cal;
+  chan_def = &X :  10296.15 MHz : U : 0.50 MHz : &CH27 : &BBC27 : &U_cal;
+  chan_def = &X :  10424.15 MHz : U : 0.50 MHz : &CH28 : &BBC28 : &U_cal;
+  chan_def = &X :  10520.15 MHz : U : 0.50 MHz : &CH29 : &BBC29 : &U_cal;
+  chan_def = &X :  10584.15 MHz : U : 0.50 MHz : &CH30 : &BBC30 : &U_cal;
+  chan_def = &X :  10648.15 MHz : U : 0.50 MHz : &CH31 : &BBC31 : &U_cal;
+  chan_def = &X :  10680.15 MHz : U : 0.50 MHz : &CH32 : &BBC32 : &U_cal;
+  sample_rate = 1.00 Ms/sec;
+enddef;
+def WETT12M;
+*                 Band    Sky freq    Net    Chan       Chan     BBC   Phase-cal
+*                  Id    at 0Hz BBC    SB     BW         ID       ID       ID 
+  chan_def = &S :  3032.15 MHz : U : 0.50 MHz : &CH01 : &BBC01 : &U_cal;
+  chan_def = &S :  3064.15 MHz : U : 0.50 MHz : &CH02 : &BBC02 : &U_cal;
+  chan_def = &S :  3096.15 MHz : U : 0.50 MHz : &CH03 : &BBC03 : &U_cal;
+  chan_def = &S :  3224.15 MHz : U : 0.50 MHz : &CH04 : &BBC04 : &U_cal;
+  chan_def = &S :  3320.15 MHz : U : 0.50 MHz : &CH05 : &BBC05 : &U_cal;
+  chan_def = &S :  3384.15 MHz : U : 0.50 MHz : &CH06 : &BBC06 : &U_cal;
+  chan_def = &S :  3448.15 MHz : U : 0.50 MHz : &CH07 : &BBC07 : &U_cal;
+  chan_def = &S :  3480.15 MHz : U : 0.50 MHz : &CH08 : &BBC08 : &U_cal;
+  chan_def = &C :  5272.15 MHz : U : 0.50 MHz : &CH09 : &BBC09 : &U_cal;
+  chan_def = &C :  5304.15 MHz : U : 0.50 MHz : &CH10 : &BBC10 : &U_cal;
+  chan_def = &C :  5336.15 MHz : U : 0.50 MHz : &CH11 : &BBC11 : &U_cal;
+  chan_def = &C :  5464.15 MHz : U : 0.50 MHz : &CH12 : &BBC12 : &U_cal;
+  chan_def = &C :  5560.15 MHz : U : 0.50 MHz : &CH13 : &BBC13 : &U_cal;
+  chan_def = &C :  5624.15 MHz : U : 0.50 MHz : &CH14 : &BBC14 : &U_cal;
+  chan_def = &C :  5688.15 MHz : U : 0.50 MHz : &CH15 : &BBC15 : &U_cal;
+  chan_def = &C :  5720.15 MHz : U : 0.50 MHz : &CH16 : &BBC16 : &U_cal;
+  chan_def = &C :  6392.15 MHz : U : 0.50 MHz : &CH17 : &BBC17 : &U_cal;
+  chan_def = &C :  6424.15 MHz : U : 0.50 MHz : &CH18 : &BBC18 : &U_cal;
+  chan_def = &C :  6456.15 MHz : U : 0.50 MHz : &CH19 : &BBC19 : &U_cal;
+  chan_def = &C :  6584.15 MHz : U : 0.50 MHz : &CH20 : &BBC20 : &U_cal;
+  chan_def = &C :  6680.15 MHz : U : 0.50 MHz : &CH21 : &BBC21 : &U_cal;
+  chan_def = &C :  6744.15 MHz : U : 0.50 MHz : &CH22 : &BBC22 : &U_cal;
+  chan_def = &C :  6808.15 MHz : U : 0.50 MHz : &CH23 : &BBC23 : &U_cal;
+  chan_def = &C :  6840.15 MHz : U : 0.50 MHz : &CH24 : &BBC24 : &U_cal;
+  chan_def = &X :  10232.15 MHz : U : 0.50 MHz : &CH25 : &BBC25 : &U_cal;
+  chan_def = &X :  10264.15 MHz : U : 0.50 MHz : &CH26 : &BBC26 : &U_cal;
+  chan_def = &X :  10296.15 MHz : U : 0.50 MHz : &CH27 : &BBC27 : &U_cal;
+  chan_def = &X :  10424.15 MHz : U : 0.50 MHz : &CH28 : &BBC28 : &U_cal;
+  chan_def = &X :  10520.15 MHz : U : 0.50 MHz : &CH29 : &BBC29 : &U_cal;
+  chan_def = &X :  10584.15 MHz : U : 0.50 MHz : &CH30 : &BBC30 : &U_cal;
+  chan_def = &X :  10648.15 MHz : U : 0.50 MHz : &CH31 : &BBC31 : &U_cal;
+  chan_def = &X :  10680.15 MHz : U : 0.50 MHz : &CH32 : &BBC32 : &U_cal;
+  sample_rate = 1.00 Ms/sec;
+enddef;
+*--------------------------------------------------------
+$PASS_ORDER;
+*--------------------------------------------------------
+* WARNING: This block is hard coded!
+def passOrder;
+  pass_order =   1A :   2A :   3A :   4A :   5A :   6A :   7A :   8A :   9A :  10A :  11A :  12A :  13A :  14A;
+enddef;
+*--------------------------------------------------------
+$ROLL;
+*--------------------------------------------------------
+* WARNING: This block is hard coded!
+def NO_ROLL;
+  roll = off;
+enddef;
+*--------------------------------------------------------
+$PHASE_CAL_DETECT;
+*--------------------------------------------------------
+* WARNING: This block is hard coded!
+def Standard;
+  phase_cal_detect = &U_cal : 2;
+enddef;
+*--------------------------------------------------------
+$SCHED;
+*--------------------------------------------------------
+scan SIM001;
+  start = 2020y028d17h30m00s;
+  mode = sim-0001;
+  source = 0026+892;
+  station = S1 : 0 sec : 1 sec : 0 ft: 1A : &n : 1;
+  station = S2 : 0 sec : 1 sec : 0 ft: 1A : &n : 1;
+endscan;
+$CLOCK;
+*                          Valid from       clock_early       rate epoch        rate
+*                                              [usec]                        [sec/sec]
+def S1; clock_early = 2020y028d17h30m00s :   0 usec : 2020y028d17h30m00s : 0.0; enddef; * delay application
+def S2; clock_early = 2020y028d17h30m00s :   0 usec : 2020y028d17h30m00s : 0.0; enddef; * delay application
+$EOP;
+  def EOP26;
+    TAI-UTC=37 sec;
+    A1-TAI=0 sec; * hard coded
+    eop_ref_epoch=2020y26d;
+    num_eop_points=1; * hard coded
+    eop_interval=24 hr; * hard coded
+    ut1-utc =-0.0499239 sec;
+    x_wobble =0.05952 asec;
+    y_wobble =0.290649 asec;
+  enddef;
+  def EOP27;
+    TAI-UTC=37 sec;
+    A1-TAI=0 sec; * hard coded
+    eop_ref_epoch=2020y27d;
+    num_eop_points=1; * hard coded
+    eop_interval=24 hr; * hard coded
+    ut1-utc =-0.0509775 sec;
+    x_wobble =0.059032 asec;
+    y_wobble =0.292048 asec;
+  enddef;
+  def EOP28;
+    TAI-UTC=37 sec;
+    A1-TAI=0 sec; * hard coded
+    eop_ref_epoch=2020y28d;
+    num_eop_points=1; * hard coded
+    eop_interval=24 hr; * hard coded
+    ut1-utc =-0.0522328 sec;
+    x_wobble =0.058318 asec;
+    y_wobble =0.293932 asec;
+  enddef;
+  def EOP29;
+    TAI-UTC=37 sec;
+    A1-TAI=0 sec; * hard coded
+    eop_ref_epoch=2020y29d;
+    num_eop_points=1; * hard coded
+    eop_interval=24 hr; * hard coded
+    ut1-utc =-0.0536351 sec;
+    x_wobble =0.057035 asec;
+    y_wobble =0.295783 asec;
+  enddef;
+  def EOP30;
+    TAI-UTC=37 sec;
+    A1-TAI=0 sec; * hard coded
+    eop_ref_epoch=2020y30d;
+    num_eop_points=1; * hard coded
+    eop_interval=24 hr; * hard coded
+    ut1-utc =-0.0550686 sec;
+    x_wobble =0.055492 asec;
+    y_wobble =0.297227 asec;
+  enddef;

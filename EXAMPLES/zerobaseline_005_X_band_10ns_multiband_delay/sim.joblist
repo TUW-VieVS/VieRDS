@@ -1,0 +1,2 @@
+exper=SIM  v2d=sim.v2d  pass=sim  mjd=59169.7606374  DiFX=DiFX-2.6  vex2difx=2.6.0  vex=/home/jakob/software/BasebandSim/OUT/2020_321_19_13_34/sim.vex
+sim_1 58876.7291667 58876.7291782 2 0 1 0.007808 0  # S1 S2

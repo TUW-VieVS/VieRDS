@@ -1,0 +1,60 @@
+%% list of parameters
+
+% structs
+% write vdif
+params.	... consists of global header information
+headerspec 	... input for create_vdif_data_fram_header
+header 		... current frame header output of create_vdif_data_fram_header input for vdif_write_data_frame_header_to_file
+headerframes 	... carries infos about frames (frame id, frame id within sec, ... )
+
+% read vdif
+params. 	... consists of constant header infos
+
+
+% physical values
+scan_duration               ... scan duration
+frame_duration 	 		... physical duration of one single frame
+sampling_freq               ... sampling rate
+
+% bit length
+filesize_bit                ... total size of file in bits
+filesize_byte 	            ... total size of file in bytes
+header_length_byte          ... length of header of data frame in byte
+header_length_bit
+frame_length_8byte          ... data frame length in units of 8 bytes
+frame_length_byte           ... data frame length in bytes
+frame_length_bit            ... data frame length in bit
+data_array_length_file_bit  ... size of dataarray accumulated over total file
+data_array_length_bit        ... data array length in bit of one frame
+complete_sample_length_bit  ... number_of_channels * number_of_bits_per_sample
+
+% number of
+number_of_channels          ... number of channels
+log2_number_of_channels 	... log2(number_of_channels)
+number_of_bits_per_sample   ... number of bits per sample
+number_of_bits_per_sample_vdif_format ... bits/sample in the vdif format (bits/sample -1)
+number_frames_file          ... number of frames in file
+number_frames_per_sec     ... number of frames per second
+num_samples_file            ... number of samples in total file
+num_samples_sec 		... number of samples per sec
+num_samples_frame 	 	... number of samples per frame
+num_words_per_data_array    ... number of words in data array
+
+% id
+number_of_frame_within_sec ... frame id within sec
+id_frame 		... frame id of total file
+
+% vector numerical
+date_vec                    ... vector of with date elements
+
+% string
+station_2lc                 ... station two letter code
+file_name                   ... vdif file name
+
+% date
+hyf2000 ... half years from 2000
+sec_from_hyf2000 ... seconds from hyf2000
+    
+% other
+vdif_version_number         ... vdif version number
+

@@ -1,0 +1,32 @@
+vex = v19290.vex
+mjdStart = 2019y290d18h30m00s
+mjdStop = 2019y290d19h31m00s
+antennas = K2,Ws
+startSeries = 1000
+singleScan = True
+
+SETUP default
+{
+  nChan = 128
+#  specRes = 0.05
+  tInt=1
+}
+
+ANTENNA K2
+{
+#  machine = localhost
+  format = VDIFC/32800/2
+  filelist = k2.fl
+  sampling = COMPLEX
+  phaseCalInt = 5
+}
+
+ANTENNA Ws
+{
+#  machine = localhost
+  format = VDIF/32800/2
+  filelist = ws.fl
+  sampling = REAL
+  phaseCalInt = 5
+}
+

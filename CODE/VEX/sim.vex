@@ -1,0 +1,144 @@
+$GLOBAL;
+*--------------------------------------------------------
+	ref $EXPER = sim;
+*--------------------------------------------------------
+$EXPER;
+*--------------------------------------------------------
+	def sim;
+		exper_description = baseband_data_simulation;
+		exper_nominal_start = 2019y024d12h21m24s;
+		exper_nominal_stop = 2019y024d12h21m25s;
+		scheduler_name = John_Doe;
+		target_correlator = Hard_Corr;
+*		software = VIEVS_Baseband_Simulator;
+*		software_version = GIT_version_required_NYI;
+	enddef;
+*--------------------------------------------------------
+$STATION;
+*--------------------------------------------------------
+	def s1;
+		ref $SITE = STATION1;
+		ref $ANTENNA = STATION1;
+	enddef;
+	def Wz;
+		ref $SITE = STATION1;
+		ref $ANTENNA = STATION1;
+	enddef;
+*--------------------------------------------------------
+$SITE;
+*--------------------------------------------------------
+	def STATION1;
+		site_type = fixed;
+		site_name = STATION1;
+		site_ID = s1;
+		site_position = 1234 m : 1234 m : 1234 m;
+		site_position_ref = sked_position.cat;
+		occupation_code = 0000000;
+	enddef;
+	def STATION1;
+		site_type = fixed;
+		site_name = STATION1;
+		site_ID = Wz;
+		site_position = 1234 m : 1234 m : 1234 m;
+		site_position_ref = sked_position.cat;
+		occupation_code = 0000000;
+	enddef;
+*--------------------------------------------------------
+$ANTENNA;
+*--------------------------------------------------------
+	def STATION1;
+		pointing_sector = &n     :  az :  0 deg :  360 deg :  el :    5 deg :   89 deg ; * hardcoded to arbitrary value not sure if necessary
+	enddef;
+	def STATION1;
+		pointing_sector = &n     :  az :  0 deg :  360 deg :  el :    5 deg :   89 deg ; * hardcoded to arbitrary value not sure if necessary
+	enddef;
+*--------------------------------------------------------
+$DAS;
+*--------------------------------------------------------
+	def FlexBuff_recorder;
+		record_transport_type = FlexBuff;
+	enddef;
+$SOURCE;
+*--------------------------------------------------------
+	def 1849+670;
+		source_type = star;
+		ra = 4.927361e+00;
+		dec = 1.171027e+00;
+		ref_coord_frame = J2000;
+		ra_rate = 0 asec/yr; * hard coded 
+		dec_rate = 0 asec/yr; * hard coded 
+	enddef;
+*--------------------------------------------------------
+$IF;
+*--------------------------------------------------------
+	def STATION1;
+		if_def = &IF_1 : 1 : R : 8220.990000 MHz : U : 0.000000 MHz : 0.00 Hz;
+		if_def = &IF_2 : 2 : R : 8320.990000 MHz : U : 0.000000 MHz : 0.00 Hz;
+		if_def = &IF_3 : 3 : R : 8420.990000 MHz : U : 0.000000 MHz : 0.00 Hz;
+		if_def = &IF_4 : 4 : R : 8520.990000 MHz : U : 0.000000 MHz : 0.00 Hz;
+		if_def = &IF_5 : 5 : R : 8620.990000 MHz : U : 0.000000 MHz : 0.00 Hz;
+		if_def = &IF_6 : 6 : R : 8720.990000 MHz : U : 0.000000 MHz : 0.00 Hz;
+		if_def = &IF_7 : 7 : R : 8820.990000 MHz : U : 0.000000 MHz : 0.00 Hz;
+		if_def = &IF_8 : 8 : R : 8920.990000 MHz : U : 0.000000 MHz : 0.00 Hz;
+		if_def = &IF_9 : 9 : R : 2220.990000 MHz : U : 0.000000 MHz : 0.00 Hz;
+		if_def = &IF_10 : 10 : R : 3320.990000 MHz : U : 0.000000 MHz : 0.00 Hz;
+	enddef;
+	def STATION1;
+		if_def = &IF_1 : 1 : R : 8220.990000 MHz : U : 0.000000 MHz : 0.00 Hz;
+		if_def = &IF_2 : 2 : R : 8320.990000 MHz : U : 0.000000 MHz : 0.00 Hz;
+		if_def = &IF_3 : 3 : R : 8420.990000 MHz : U : 0.000000 MHz : 0.00 Hz;
+		if_def = &IF_4 : 4 : R : 8520.990000 MHz : U : 0.000000 MHz : 0.00 Hz;
+		if_def = &IF_5 : 5 : R : 8620.990000 MHz : U : 0.000000 MHz : 0.00 Hz;
+		if_def = &IF_6 : 6 : R : 8720.990000 MHz : U : 0.000000 MHz : 0.00 Hz;
+		if_def = &IF_7 : 7 : R : 8820.990000 MHz : U : 0.000000 MHz : 0.00 Hz;
+		if_def = &IF_8 : 8 : R : 8920.990000 MHz : U : 0.000000 MHz : 0.00 Hz;
+		if_def = &IF_9 : 9 : R : 2220.990000 MHz : U : 0.000000 MHz : 0.00 Hz;
+		if_def = &IF_10 : 10 : R : 3320.990000 MHz : U : 0.000000 MHz : 0.00 Hz;
+	enddef;
+$TRACKS;
+*--------------------------------------------------------
+	def STATION1;
+		fanout_def =    A : &CH01 : sign : 1 : 01;
+		fanout_def =    A : &CH01 :  mag : 1 : 02;
+		fanout_def =    A : &CH02 : sign : 1 : 03;
+		fanout_def =    A : &CH02 :  mag : 1 : 04;
+		fanout_def =    A : &CH03 : sign : 1 : 05;
+		fanout_def =    A : &CH03 :  mag : 1 : 06;
+		fanout_def =    A : &CH04 : sign : 1 : 07;
+		fanout_def =    A : &CH04 :  mag : 1 : 08;
+		fanout_def =    A : &CH05 : sign : 1 : 09;
+		fanout_def =    A : &CH05 :  mag : 1 : 10;
+		fanout_def =    A : &CH06 : sign : 1 : 11;
+		fanout_def =    A : &CH06 :  mag : 1 : 12;
+		fanout_def =    A : &CH07 : sign : 1 : 13;
+		fanout_def =    A : &CH07 :  mag : 1 : 14;
+		fanout_def =    A : &CH08 : sign : 1 : 15;
+		fanout_def =    A : &CH08 :  mag : 1 : 16;
+		fanout_def =    A : &CH09 : sign : 1 : 17;
+		fanout_def =    A : &CH09 :  mag : 1 : 18;
+		fanout_def =    A : &CH10 : sign : 1 : 19;
+		fanout_def =    A : &CH10 :  mag : 1 : 20;
+	enddef;
+	def STATION1;
+		fanout_def =    A : &CH01 : sign : 1 : 01;
+		fanout_def =    A : &CH01 :  mag : 1 : 02;
+		fanout_def =    A : &CH02 : sign : 1 : 03;
+		fanout_def =    A : &CH02 :  mag : 1 : 04;
+		fanout_def =    A : &CH03 : sign : 1 : 05;
+		fanout_def =    A : &CH03 :  mag : 1 : 06;
+		fanout_def =    A : &CH04 : sign : 1 : 07;
+		fanout_def =    A : &CH04 :  mag : 1 : 08;
+		fanout_def =    A : &CH05 : sign : 1 : 09;
+		fanout_def =    A : &CH05 :  mag : 1 : 10;
+		fanout_def =    A : &CH06 : sign : 1 : 11;
+		fanout_def =    A : &CH06 :  mag : 1 : 12;
+		fanout_def =    A : &CH07 : sign : 1 : 13;
+		fanout_def =    A : &CH07 :  mag : 1 : 14;
+		fanout_def =    A : &CH08 : sign : 1 : 15;
+		fanout_def =    A : &CH08 :  mag : 1 : 16;
+		fanout_def =    A : &CH09 : sign : 1 : 17;
+		fanout_def =    A : &CH09 :  mag : 1 : 18;
+		fanout_def =    A : &CH10 : sign : 1 : 19;
+		fanout_def =    A : &CH10 :  mag : 1 : 20;
+	enddef;
+*--------------------------------------------------------

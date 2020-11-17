@@ -1,0 +1,28 @@
+setup:
+  zero_bl: 1
+s1:
+  date_vec: [2020,1,28,17,30,00]
+  station_name: S1
+  station_name_8character: WETTZELL
+  station_name_trf_coord: Wz
+  sampling_frequency: 8
+  scan_length: 1
+  fluxdensity_targetsource: 10
+  fluxdensity_system: 50
+  f0: 3016.30
+  number_of_bits: 1
+  source_name: 0026+892
+  bandpass_filter_name: default
+s2:
+  date_vec: [2020,1,28,17,30,00]
+  station_name: S2
+  station_name_8character: YEBES12M
+  station_name_trf_coord: Ys
+  sampling_frequency: 8
+  scan_length: 1
+  fluxdensity_targetsource: 10
+  fluxdensity_system: 50
+  f0: 3016.30
+  number_of_bits: 1
+  source_name: 0026+892
+  bandpass_filter_name: default
