@@ -46,7 +46,7 @@ fprintf('\n')
 params_common = cell(NSim,1);
 
 % loop through simulation
-for iSim = 1:NSim
+parfor iSim = 1:NSim
     
     fprintf('\nStart model calculation for CH: %.0f/%.0f\n\n',iSim,NSim)
     % model params per simulation
@@ -59,6 +59,12 @@ if controling.vex_file == 1
     create_vex_file(SIM_sta,controling);
 end
 
+%% DiFX
+% create v2d file
+if controling.write_v2d_file == 1
+    create_v2d_file_wrapper(SIM_sta,controling)
+end
+
 %% bbs_signal
 
 fprintf('\n')
@@ -68,7 +74,7 @@ fprintf('::::::::::::::::::::::::\n')
 fprintf('\n')
 
 % loop through simulation
-for iSim = 1:NSim
+parfor iSim = 1:NSim
     fprintf('Ch %.0f\n',iSim)
     % signals per simulation
     SIM_sta{iSim} = bbs_signal(SIM_sta{iSim}, params_common{iSim}, controling);
@@ -84,12 +90,6 @@ fprintf('\n')
 
 if controling.write_vdif_file == 1
     create_vdif_files(CH_ind, SIM_sta, controling);
-end
-
-%% DiFX
-% create v2d file
-if controling.write_v2d_file == 1
-    create_v2d_file_wrapper(SIM_sta,controling)
 end
 
 %% cp yaml input file to OUT folder

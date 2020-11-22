@@ -49,6 +49,9 @@ p.x_source = sourcesignal_adjustment(p.x_source, p.sigma_targetsource,p.signal_t
 % superposition of station signals
 p.x_ideal = signal_superposition_station(p.x_source, p.x_system, p.x_pcal);
 
+p.x_system = [];
+p.x_source = [];
+
 % delay superpositioned signal
 p.x_ideal = delay_signal(p.x_ideal,p.delay_super_n0,p.delay_super_dn,p.delay_super_phi0);
 
@@ -64,8 +67,7 @@ end
 
 % empty signals
 p.x_ideal = [];
-p.x_system = [];
-p.x_source = [];
+
 
 % quantization
 p.x_quant = quantization(p.x_filt, p.number_of_bits, p.qfact);

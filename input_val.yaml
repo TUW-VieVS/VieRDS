@@ -9,7 +9,7 @@ s1:
   scan_length: 1
   fluxdensity_targetsource: 10
   fluxdensity_system: 50
-  f0: 3016.30
+  f0: [8212.99, 8252.99, 8352.99, 8512.99, 8732.99, 8852.99, 8892.99, 8932.99]  
   number_of_bits: 1
   source_name: 0026+892
   bandpass_filter_name: default
@@ -22,7 +22,7 @@ s2:
   scan_length: 1
   fluxdensity_targetsource: 10
   fluxdensity_system: 50
-  f0: 3016.30
+  f0: [8212.99, 8252.99, 8352.99, 8512.99, 8732.99, 8852.99, 8892.99, 8932.99]
   number_of_bits: 1
   source_name: 0026+892
   bandpass_filter_name: default
