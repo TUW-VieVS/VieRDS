@@ -14,6 +14,3 @@ Run:
 
 /usr/local/MATLAB/R2020a/bin/matlab -c ~/.matlab/R2020a_licenses/license_jgruber1_338656_R2020a.lic -nodisplay  -r 'vierds input_val.yaml; exit;'
 
-
-(2) Without Matlab Installation from Command Line
-
