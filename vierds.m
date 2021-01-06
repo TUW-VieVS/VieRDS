@@ -1,20 +1,22 @@
+function vierds(yaml_file_name)
 tic;
+
 
 %% start of code
 fprintf('start raw data simulation: %s\n',datetime('now'));
 
 % clear matlab memory and close files/figures
-clear; close all
+%clear; close all
 
 % add baseband sim libs
-addpath(genpath('CODE'))
+%addpath(genpath('CODE'))
 
 % check if OUT folder exists
 if ~exist('OUT', 'dir')
     mkdir('OUT')
 end
 
-yaml_file_name = 'input_val.yaml';
+%yaml_file_name='input_val.yaml';
 
 %% input
 % arranges all the input for the software
@@ -46,7 +48,7 @@ fprintf('\n')
 params_common = cell(NSim,1);
 
 % loop through simulation
-parfor iSim = 1:NSim
+for iSim = 1:NSim
     
     fprintf('\nStart model calculation for CH: %.0f/%.0f\n\n',iSim,NSim)
     % model params per simulation
@@ -74,7 +76,7 @@ fprintf('::::::::::::::::::::::::\n')
 fprintf('\n')
 
 % loop through simulation
-parfor iSim = 1:NSim
+for iSim = 1:NSim
     fprintf('Ch %.0f\n',iSim)
     % signals per simulation
     SIM_sta{iSim} = bbs_signal(SIM_sta{iSim}, params_common{iSim}, controling);
@@ -117,3 +119,7 @@ fprintf('\n')
 fprintf('Run time: %f (sec)\n\n',t)
 
 fprintf('end of code\n')
+
+end
+
+
