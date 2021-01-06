@@ -9,7 +9,7 @@ fprintf('start raw data simulation: %s\n',datetime('now'));
 %clear; close all
 
 % add baseband sim libs
-%addpath(genpath('CODE'))
+addpath(genpath('CODE'))
 
 % check if OUT folder exists
 if ~exist('OUT', 'dir')

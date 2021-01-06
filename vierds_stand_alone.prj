@@ -1,0 +1,333 @@
+<deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
+  <configuration file="/home/jgruber1/software/VieRDS/VieRDS/vierds_stand_alone.prj" location="/home/jgruber1/software/VieRDS/VieRDS" name="vierds_stand_alone" target="target.ezdeploy.standalone" target-name="Application Compiler">
+    <param.appname>vierds_stand_alone</param.appname>
+    <param.icon />
+    <param.icons />
+    <param.version>1.0</param.version>
+    <param.authnamewatermark />
+    <param.email />
+    <param.company />
+    <param.summary />
+    <param.description />
+    <param.screenshot />
+    <param.guid />
+    <param.installpath.string>/vierds_stand_alone/</param.installpath.string>
+    <param.installpath.combo>option.installpath.user</param.installpath.combo>
+    <param.logo />
+    <param.install.notes />
+    <param.target.install.notes>In the following directions, replace MR/v98 by the directory on the target machine where MATLAB is installed, or MR by the directory where the MATLAB Runtime is installed.
+
+(1) Set the environment variable XAPPLRESDIR to this value:
+
+MR/v98/X11/app-defaults
+
+
+(2) If the environment variable LD_LIBRARY_PATH is undefined, set it to the following:
+
+MR/v98/runtime/glnxa64:MR/v98/bin/glnxa64:MR/v98/sys/os/glnxa64:MR/v98/sys/opengl/lib/glnxa64
+
+If it is defined, set it to the following:
+
+${LD_LIBRARY_PATH}:MR/v98/runtime/glnxa64:MR/v98/bin/glnxa64:MR/v98/sys/os/glnxa64:MR/v98/sys/opengl/lib/glnxa64</param.target.install.notes>
+    <param.intermediate>${PROJECT_ROOT}/vierds_stand_alone/for_testing</param.intermediate>
+    <param.files.only>${PROJECT_ROOT}/vierds_stand_alone/for_redistribution_files_only</param.files.only>
+    <param.output>${PROJECT_ROOT}/vierds_stand_alone/for_redistribution</param.output>
+    <param.logdir>${PROJECT_ROOT}/vierds_stand_alone</param.logdir>
+    <param.enable.clean.build>false</param.enable.clean.build>
+    <param.user.defined.mcr.options />
+    <param.target.type>subtarget.standalone</param.target.type>
+    <param.support.packages />
+    <param.web.mcr>true</param.web.mcr>
+    <param.package.mcr>false</param.package.mcr>
+    <param.no.mcr>false</param.no.mcr>
+    <param.web.mcr.name>MyAppInstaller_web</param.web.mcr.name>
+    <param.package.mcr.name>MyAppInstaller_mcr</param.package.mcr.name>
+    <param.no.mcr.name>MyAppInstaller_app</param.no.mcr.name>
+    <param.windows.command.prompt>false</param.windows.command.prompt>
+    <param.create.log>false</param.create.log>
+    <param.log.file />
+    <param.native.matlab>false</param.native.matlab>
+    <param.checkbox>false</param.checkbox>
+    <param.example />
+    <param.help.text>Syntax 
+	 vierds_stand_alone -? 
+	 vierds_stand_alone yaml_file_name 
+ Input Arguments 
+	 -?  print help on how to use the application 
+	 yaml_file_name  input arguments</param.help.text>
+    <unset>
+      <param.icon />
+      <param.icons />
+      <param.version />
+      <param.authnamewatermark />
+      <param.email />
+      <param.company />
+      <param.summary />
+      <param.description />
+      <param.screenshot />
+      <param.guid />
+      <param.installpath.string />
+      <param.installpath.combo />
+      <param.logo />
+      <param.install.notes />
+      <param.intermediate />
+      <param.files.only />
+      <param.output />
+      <param.logdir />
+      <param.enable.clean.build />
+      <param.user.defined.mcr.options />
+      <param.target.type />
+      <param.support.packages />
+      <param.web.mcr />
+      <param.package.mcr />
+      <param.no.mcr />
+      <param.web.mcr.name />
+      <param.package.mcr.name />
+      <param.no.mcr.name />
+      <param.windows.command.prompt />
+      <param.create.log />
+      <param.log.file />
+      <param.native.matlab />
+      <param.checkbox />
+      <param.example />
+    </unset>
+    <fileset.main>
+      <file>${PROJECT_ROOT}/vierds_stand_alone.m</file>
+    </fileset.main>
+    <fileset.resources>
+      <file>${PROJECT_ROOT}/CODE/MODEL/REFERENCE_FRAME/C04_08_1962_now.txt</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/REFERENCE_FRAME/C04_14_1962_now.txt</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/REFERENCE_FRAME/as2rad.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/REFERENCE_FRAME/calcEOP_tm.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/REFERENCE_FRAME/calcT2C_tm.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/REFERENCE_FRAME/calcX_crf_tm.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/REFERENCE_FRAME/calc_params_tm.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/REFERENCE_FRAME/calc_s_X_tm.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/REFERENCE_FRAME/createEOPvex.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/REFERENCE_FRAME/create_sr_coord.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/REFERENCE_FRAME/create_st_coord.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/REFERENCE_FRAME/determineSignalArrivalTime.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/REFERENCE_FRAME/drotm.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/REFERENCE_FRAME/eopinterp.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/REFERENCE_FRAME/finals_all_IAU2000.txt</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/REFERENCE_FRAME/fund_arg.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/REFERENCE_FRAME/get_timemodel_ref_dates.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/REFERENCE_FRAME/get_trf_and_crf.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/REFERENCE_FRAME/lagint4v.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/REFERENCE_FRAME/leapsec_message.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/REFERENCE_FRAME/load_eop.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/REFERENCE_FRAME/manualTrfToSuperstatTrf.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/REFERENCE_FRAME/modjuldat.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/REFERENCE_FRAME/rotm.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/REFERENCE_FRAME/run_sameLat.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/REFERENCE_FRAME/sameLat.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/REFERENCE_FRAME/supersource.mat</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/REFERENCE_FRAME/superstation.mat</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/REFERENCE_FRAME/tai_utc.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/REFERENCE_FRAME/trs2crs.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/REFERENCE_FRAME/trs2crs_2.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/REFERENCE_FRAME/vievsTrf.txt</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/REFERENCE_FRAME/xys2000a.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/REFERENCE_FRAME/xys2006a.m</file>
+      <file>${PROJECT_ROOT}/CODE/YAML/external/LICENSE-2.0.txt</file>
+      <file>${PROJECT_ROOT}/CODE/YAML/external/snakeyaml-1.9.jar</file>
+    </fileset.resources>
+    <fileset.package />
+    <fileset.depfun>
+      <file>${PROJECT_ROOT}/CODE/FORMATTER/VDIF/auxVDIF.m</file>
+      <file>${PROJECT_ROOT}/CODE/FORMATTER/VDIF/checkAuxVDIFParams.m</file>
+      <file>${PROJECT_ROOT}/CODE/FORMATTER/VDIF/checkSamples.m</file>
+      <file>${PROJECT_ROOT}/CODE/FORMATTER/VDIF/checkWriteVDIFInput.m</file>
+      <file>${PROJECT_ROOT}/CODE/FORMATTER/VDIF/create_header_frames_struct.m</file>
+      <file>${PROJECT_ROOT}/CODE/FORMATTER/VDIF/create_headerspecification_global.m</file>
+      <file>${PROJECT_ROOT}/CODE/FORMATTER/VDIF/create_vdif_data_frame_header.m</file>
+      <file>${PROJECT_ROOT}/CODE/FORMATTER/VDIF/create_vdif_filename.m</file>
+      <file>${PROJECT_ROOT}/CODE/FORMATTER/VDIF/create_vdif_files.m</file>
+      <file>${PROJECT_ROOT}/CODE/FORMATTER/VDIF/date2vdifdate.m</file>
+      <file>${PROJECT_ROOT}/CODE/FORMATTER/VDIF/matlab2vdif_samples.m</file>
+      <file>${PROJECT_ROOT}/CODE/FORMATTER/VDIF/vdif_write_data_frame_header_to_file.m</file>
+      <file>${PROJECT_ROOT}/CODE/FORMATTER/VDIF/vsum_bbs.m</file>
+      <file>${PROJECT_ROOT}/CODE/FORMATTER/VDIF/writeVDIF.m</file>
+      <file>${PROJECT_ROOT}/CODE/FORMATTER/VDIF/writeVDIF_data_array.m</file>
+      <file>${PROJECT_ROOT}/CODE/INPUT/bbs_input.m</file>
+      <file>${PROJECT_ROOT}/CODE/INPUT/check_input_mode.m</file>
+      <file>${PROJECT_ROOT}/CODE/INPUT/check_multi_channel_params.m</file>
+      <file>${PROJECT_ROOT}/CODE/INPUT/check_sampling_frequency.m</file>
+      <file>${PROJECT_ROOT}/CODE/INPUT/check_signal_type_target_source.m</file>
+      <file>${PROJECT_ROOT}/CODE/INPUT/check_sta.m</file>
+      <file>${PROJECT_ROOT}/CODE/INPUT/combine_structs.m</file>
+      <file>${PROJECT_ROOT}/CODE/INPUT/correct_input_format_channel_independent.m</file>
+      <file>${PROJECT_ROOT}/CODE/INPUT/correct_input_format_channel_independent_length_1.m</file>
+      <file>${PROJECT_ROOT}/CODE/INPUT/create_SIM_sta.m</file>
+      <file>${PROJECT_ROOT}/CODE/INPUT/create_channel_id_struct.m</file>
+      <file>${PROJECT_ROOT}/CODE/INPUT/create_frequency_range_matrix.m</file>
+      <file>${PROJECT_ROOT}/CODE/INPUT/create_sta.m</file>
+      <file>${PROJECT_ROOT}/CODE/INPUT/define_colormap.m</file>
+      <file>${PROJECT_ROOT}/CODE/INPUT/exchandling.m</file>
+      <file>${PROJECT_ROOT}/CODE/INPUT/find_corresponding_channels.m</file>
+      <file>${PROJECT_ROOT}/CODE/INPUT/get_Nch_max.m</file>
+      <file>${PROJECT_ROOT}/CODE/INPUT/get_Nch_sum.m</file>
+      <file>${PROJECT_ROOT}/CODE/INPUT/get_global_observation_params_array.m</file>
+      <file>${PROJECT_ROOT}/CODE/INPUT/get_global_observation_params_length_1.m</file>
+      <file>${PROJECT_ROOT}/CODE/INPUT/get_number_of_f0_from_input.m</file>
+      <file>${PROJECT_ROOT}/CODE/INPUT/inputval.m</file>
+      <file>${PROJECT_ROOT}/CODE/INPUT/load_reference_frame.m</file>
+      <file>${PROJECT_ROOT}/CODE/INPUT/print_controling_setup.m</file>
+      <file>${PROJECT_ROOT}/CODE/INPUT/readArbMagResp.m</file>
+      <file>${PROJECT_ROOT}/CODE/INPUT/readArbMagRespSingle.m</file>
+      <file>${PROJECT_ROOT}/CODE/INPUT/readTonePhaseOffset.m</file>
+      <file>${PROJECT_ROOT}/CODE/INPUT/setcontroling.m</file>
+      <file>${PROJECT_ROOT}/CODE/INPUT/sort_multichannel_params.m</file>
+      <file>${PROJECT_ROOT}/CODE/INPUT/station_struct_label.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/bbs_model.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/calcSampleDelayParams.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/central_dquotient.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/createArbMagFilterObject.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/fluxdensity2temperature.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/input2si.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/modelparams.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/modelparams_basics.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/modelparams_delaytau.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/modelparams_ext.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/modelparams_noise_arbmag.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/modelparams_phasecal.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/modelparams_power.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/modelparams_referenceframe.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/partner.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/printDelayTable.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/printParamOverview.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/printParamOverview2File.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/rad2arcsec.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/secscale.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/skyFreqPhaseOffset.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/stat_individual_params.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/temp2power.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/temperature2fluxdensity.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/time_model_vector.m</file>
+      <file>${PROJECT_ROOT}/CODE/MODEL/zero_kinematic.m</file>
+      <file>${PROJECT_ROOT}/CODE/SIGNAL/DELAY/delay3step.m</file>
+      <file>${PROJECT_ROOT}/CODE/SIGNAL/DELAY/frac_delay_fir.m</file>
+      <file>${PROJECT_ROOT}/CODE/SIGNAL/DELAY/fractional_delay_application_fir_plus_filter_delay_correction.m</file>
+      <file>${PROJECT_ROOT}/CODE/SIGNAL/DELAY/integerDelay.m</file>
+      <file>${PROJECT_ROOT}/CODE/SIGNAL/DELAY/integerDelayZeroPadding.m</file>
+      <file>${PROJECT_ROOT}/CODE/SIGNAL/DELAY/phaseOffsetMethods.m</file>
+      <file>${PROJECT_ROOT}/CODE/SIGNAL/DELAYRATE/delay_rate_application.m</file>
+      <file>${PROJECT_ROOT}/CODE/SIGNAL/DELAYRATE/nufft_wrapper.m</file>
+      <file>${PROJECT_ROOT}/CODE/SIGNAL/DELAYRATE/single_side_band_modulation.m</file>
+      <file>${PROJECT_ROOT}/CODE/SIGNAL/DOR/dortones.m</file>
+      <file>${PROJECT_ROOT}/CODE/SIGNAL/PCAL/generatePcalSignal.m</file>
+      <file>${PROJECT_ROOT}/CODE/SIGNAL/TELESCOPE/telescope_signals.m</file>
+      <file>${PROJECT_ROOT}/CODE/SIGNAL/bbs_signal.m</file>
+      <file>${PROJECT_ROOT}/CODE/SIGNAL/delaySignalComponent.m</file>
+      <file>${PROJECT_ROOT}/CODE/SIGNAL/delay_signal.m</file>
+      <file>${PROJECT_ROOT}/CODE/SIGNAL/filterSignal.m</file>
+      <file>${PROJECT_ROOT}/CODE/SIGNAL/filterSignalComponent.m</file>
+      <file>${PROJECT_ROOT}/CODE/SIGNAL/gennoise.m</file>
+      <file>${PROJECT_ROOT}/CODE/SIGNAL/phaseOffSignalComponent.m</file>
+      <file>${PROJECT_ROOT}/CODE/SIGNAL/quant1.m</file>
+      <file>${PROJECT_ROOT}/CODE/SIGNAL/quant2.m</file>
+      <file>${PROJECT_ROOT}/CODE/SIGNAL/quantization.m</file>
+      <file>${PROJECT_ROOT}/CODE/SIGNAL/signal_operations_wrapper.m</file>
+      <file>${PROJECT_ROOT}/CODE/SIGNAL/signal_superposition_station.m</file>
+      <file>${PROJECT_ROOT}/CODE/SIGNAL/source_signal.m</file>
+      <file>${PROJECT_ROOT}/CODE/SIGNAL/sourcesignal_adjustment.m</file>
+      <file>${PROJECT_ROOT}/CODE/V2D/create_v2d_antenna_struct.m</file>
+      <file>${PROJECT_ROOT}/CODE/V2D/create_v2d_file.m</file>
+      <file>${PROJECT_ROOT}/CODE/V2D/create_v2d_file_wrapper.m</file>
+      <file>${PROJECT_ROOT}/CODE/VEX/create_vex_file.m</file>
+      <file>${PROJECT_ROOT}/CODE/VEX/default_eop_vex.mat</file>
+      <file>${PROJECT_ROOT}/CODE/VEX/fprint_EOP.m</file>
+      <file>${PROJECT_ROOT}/CODE/VEX/fprint_antenna.m</file>
+      <file>${PROJECT_ROOT}/CODE/VEX/fprint_bbc.m</file>
+      <file>${PROJECT_ROOT}/CODE/VEX/fprint_clock.m</file>
+      <file>${PROJECT_ROOT}/CODE/VEX/fprint_das.m</file>
+      <file>${PROJECT_ROOT}/CODE/VEX/fprint_exper.m</file>
+      <file>${PROJECT_ROOT}/CODE/VEX/fprint_freq.m</file>
+      <file>${PROJECT_ROOT}/CODE/VEX/fprint_global.m</file>
+      <file>${PROJECT_ROOT}/CODE/VEX/fprint_if.m</file>
+      <file>${PROJECT_ROOT}/CODE/VEX/fprint_mode.m</file>
+      <file>${PROJECT_ROOT}/CODE/VEX/fprint_pass_order.m</file>
+      <file>${PROJECT_ROOT}/CODE/VEX/fprint_phase_cal_detect.m</file>
+      <file>${PROJECT_ROOT}/CODE/VEX/fprint_roll.m</file>
+      <file>${PROJECT_ROOT}/CODE/VEX/fprint_sched.m</file>
+      <file>${PROJECT_ROOT}/CODE/VEX/fprint_site.m</file>
+      <file>${PROJECT_ROOT}/CODE/VEX/fprint_source.m</file>
+      <file>${PROJECT_ROOT}/CODE/VEX/fprint_station.m</file>
+      <file>${PROJECT_ROOT}/CODE/YAML/ReadYaml.m</file>
+      <file>${PROJECT_ROOT}/CODE/YAML/ReadYamlRaw.m</file>
+      <file>${PROJECT_ROOT}/CODE/YAML/deflateimports.m</file>
+      <file>${PROJECT_ROOT}/CODE/YAML/doinheritance.m</file>
+      <file>${PROJECT_ROOT}/CODE/YAML/dosubstitution.m</file>
+      <file>${PROJECT_ROOT}/CODE/YAML/fprint_tracks.m</file>
+      <file>${PROJECT_ROOT}/CODE/YAML/ismymatrix.m</file>
+      <file>${PROJECT_ROOT}/CODE/YAML/issingle.m</file>
+      <file>${PROJECT_ROOT}/CODE/YAML/kwd_parent.m</file>
+      <file>${PROJECT_ROOT}/CODE/YAML/makematrices.m</file>
+      <file>${PROJECT_ROOT}/CODE/YAML/merge_struct.m</file>
+      <file>${PROJECT_ROOT}/CODE/YAML/mergeimports.m</file>
+    </fileset.depfun>
+    <build-deliverables>
+      <file location="${PROJECT_ROOT}/vierds_stand_alone/for_testing" name="vierds_stand_alone" optional="false">/home/jgruber1/software/VieRDS/VieRDS/vierds_stand_alone/for_testing/vierds_stand_alone</file>
+      <file location="${PROJECT_ROOT}/vierds_stand_alone/for_testing" name="splash.png" optional="false">/home/jgruber1/software/VieRDS/VieRDS/vierds_stand_alone/for_testing/splash.png</file>
+      <file location="${PROJECT_ROOT}/vierds_stand_alone/for_testing" name="readme.txt" optional="true">/home/jgruber1/software/VieRDS/VieRDS/vierds_stand_alone/for_testing/readme.txt</file>
+      <file location="${PROJECT_ROOT}/vierds_stand_alone/for_testing" name="run_vierds_stand_alone.sh" optional="false">/home/jgruber1/software/VieRDS/VieRDS/vierds_stand_alone/for_testing/run_vierds_stand_alone.sh</file>
+    </build-deliverables>
+    <workflow />
+    <matlab>
+      <root>/usr/local/MATLAB/R2020a</root>
+      <toolboxes>
+        <toolbox name="matlabcoder" />
+        <toolbox name="embeddedcoder" />
+        <toolbox name="gpucoder" />
+        <toolbox name="fixedpoint" />
+        <toolbox name="matlabhdlcoder" />
+        <toolbox name="neuralnetwork" />
+      </toolboxes>
+      <toolbox>
+        <matlabcoder>
+          <enabled>true</enabled>
+        </matlabcoder>
+      </toolbox>
+      <toolbox>
+        <embeddedcoder>
+          <enabled>true</enabled>
+        </embeddedcoder>
+      </toolbox>
+      <toolbox>
+        <gpucoder>
+          <enabled>true</enabled>
+        </gpucoder>
+      </toolbox>
+      <toolbox>
+        <fixedpoint>
+          <enabled>true</enabled>
+        </fixedpoint>
+      </toolbox>
+      <toolbox>
+        <matlabhdlcoder>
+          <enabled>true</enabled>
+        </matlabhdlcoder>
+      </toolbox>
+      <toolbox>
+        <neuralnetwork>
+          <enabled>true</enabled>
+        </neuralnetwork>
+      </toolbox>
+    </matlab>
+    <platform>
+      <unix>true</unix>
+      <mac>false</mac>
+      <windows>false</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>true</linux>
+      <solaris>false</solaris>
+      <osver>4.19.38-041938-generic</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>glnxa64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>
