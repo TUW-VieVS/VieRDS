@@ -1,6 +1,5 @@
 # short description
-VieRDS
-A Software to Simulate Raw Telescope Data for Very Long Baseline Interferometry. It uses a YAML input file to create simulated raw telescope data in VDIF format.
+VieRDS is a software to simulate raw telescope data for Very Long Baseline Interferometry (VLBI). It uses a YAML input file to create simulated raw telescope data in VDIF format.
 
 # build/usage requirements
 Matlab
