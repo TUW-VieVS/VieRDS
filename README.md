@@ -19,7 +19,7 @@ run:
 # link to usage examples
 Examples can be found in the EXAMPLES\ folder
 
-# link to your paper
+# link to paper
 (submitted to PASP)
 
 # list of developers
