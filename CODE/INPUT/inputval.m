@@ -72,7 +72,7 @@ p.fractional_delay_filter_stopBandAtt = 140;
 
 
 % quantization factor (percentage of sigma in quantization)
-p.qfact = 1.08;
+p.qfact = 0.9;
 
 % Delay tau plus 
 % additional delay independend of delay calculated from apriori station coordinates (delay_tau_plus_sec)
