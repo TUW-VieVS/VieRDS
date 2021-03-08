@@ -1,6 +1,8 @@
 function vierds(yaml_file_name)
 tic;
 
+% Initializes generator based on the current time, resulting in a different sequence of random numbers after each call to rng
+rng('shuffle')
 
 %% start of code
 fprintf('start raw data simulation: %s\n',datetime('now'));
