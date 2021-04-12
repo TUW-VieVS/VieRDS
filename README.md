@@ -20,7 +20,7 @@ then run, e.g.:
 Examples can be found in the EXAMPLES\ folder
 
 # link to paper
-(submitted to PASP)
+https://iopscience.iop.org/article/10.1088/1538-3873/abeca4
 
 # list of developers
 Jakob Gruber https://www.vlbi.at/index.php/rushmore_teams/grubsi/
