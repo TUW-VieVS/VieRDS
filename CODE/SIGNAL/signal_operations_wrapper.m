@@ -17,6 +17,10 @@ p = telescope_signals(p);
 % source signal: allocate to new variable in here
 p.x_source = params_common.x_source;
 
+% delete params_common.x_source signal to reduce memory usage because it is
+% saved to p.x_source anyway.
+params_common.x_source = [];
+
 % non-zero or zero baseline simulation
 if contr.zero_bl == 0
 
@@ -24,7 +28,7 @@ if contr.zero_bl == 0
     fprintf('non-zero baseline simulation selected: station delay and delay rate will be applied\n')
    
     % delay rate application
-    p.x_source = delay_rate_application(params_common.x_source, p);    
+    p.x_source = delay_rate_application(p.x_source, p);    
     
     % delay source signal
 %     p.x_source = delay_source_signal(p.x_source,p);
