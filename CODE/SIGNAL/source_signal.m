@@ -17,6 +17,9 @@ end
 % check for multi-component source (source structure soft)
 if strcmp( p.signal_type_target_source, 'here comes a nice name')
     % create noises as a matrix or how to store it?
+    % signal type: gaussian-white-noise
+    % parameters: number of point-source components
+    % delay, delay rate, source flux per station
 end
 
 % check for APOD

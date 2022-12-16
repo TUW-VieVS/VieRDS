@@ -1,28 +1,35 @@
 setup:
-  zero_bl: 1
+  zero_bl: 0
 s1:
   date_vec: [2020,1,28,17,30,00]
   station_name: S1
-  station_name_8character: WETTZELL
-  station_name_trf_coord: Wz
-  sampling_frequency: 8
+  station_name_8character: HARTRAO
+  station_name_trf_coord: Hh
+  sampling_frequency: 16
   scan_length: 1
-  fluxdensity_targetsource: 10
-  fluxdensity_system: 50
-  f0: [8212.99, 8252.99, 8352.99, 8512.99, 8732.99, 8852.99, 8892.99, 8932.99]  
+  fluxdensity_targetsource: 20
+  fluxdensity_system: 60
+  f0: [8212.99, 8252.99, 8352.99, 8512.99, 8732.99, 8852.99, 8892.99, 8932.99]
   number_of_bits: 1
-  source_name: 0026+892
-  bandpass_filter_name: default
+  signal_type_target_source: gaussian-white-noise
+  source_name: 2358+189
 s2:
   date_vec: [2020,1,28,17,30,00]
   station_name: S2
-  station_name_8character: YEBES12M
-  station_name_trf_coord: Ys
-  sampling_frequency: 8
+  station_name_8character: WARK12M
+  station_name_trf_coord: Ww
+  sampling_frequency: 16
   scan_length: 1
-  fluxdensity_targetsource: 10
-  fluxdensity_system: 50
+  fluxdensity_targetsource: 20
+  fluxdensity_system: 60
   f0: [8212.99, 8252.99, 8352.99, 8512.99, 8732.99, 8852.99, 8892.99, 8932.99]
   number_of_bits: 1
-  source_name: 0026+892
-  bandpass_filter_name: default
+  signal_type_target_source: gaussian-white-noise
+  source_name: 2358+189
+  source_RA: [[8212.99, 8252.99, 8352.99, 8512.99, 8732.99, 8852.99, 8892.99, 8932.99], [8212.99, 8252.99, 8352.99, 8512.99, 8732.99, 8852.99, 8892.99, 8932.99]]
+  source_DE: [8212.99, 8252.99, 8352.99, 8512.99, 8732.99, 8852.99, 8892.99, 8932.99]
+
+
+
+
+

@@ -39,7 +39,7 @@ for isim = 1:NSIM
 
         if isempty(tpo)
             % no tone phase offset file defined
-            fprintf('no tone phase offset file specified\n')
+%             fprintf('no tone phase offset file specified\n')
         else
             if tpo_found == 0
                 % tone phase offset file specified

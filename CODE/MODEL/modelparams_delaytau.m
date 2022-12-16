@@ -9,7 +9,6 @@ p.p_tm_interpolated = [];
 % assign to temp. variable
 co = p.p_tm_interpolated;
 
-
 % name of ref. epochs
 fn = fieldnames(p.p_tm);
 

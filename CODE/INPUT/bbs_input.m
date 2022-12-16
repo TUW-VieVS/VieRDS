@@ -42,8 +42,6 @@ else
     fprintf('zero baseline simulation selected: no need to load EOP, station position databases ... \n')
     ref_frame = struct;
 end
-    
-
 
 end
 
