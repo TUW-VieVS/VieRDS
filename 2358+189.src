@@ -1,25 +1,4 @@
-# This is a VieRDS source file. It is used to describe a source which consists of several point sources.
-# To use this file, specify the path in the input_val.yaml file.
-# It will overwrite the input for the source in input_val.yaml file.
-# Source concept:
-#	- the source is considered to be consisting of N point sources (components).
-#	- for simplification there is no property: "main" and "additional" point sources.
-#	- each component has the properties:
-#		- source_id ... integer number 1,2,3,...,N to reference component
-#		- fa ... lower frequency limit for which the component is visible (MHz)
-#		- fb ... upper frequency limit for which the component is visible (MHz)
-#		- ra ... right ascension of component (hours minutes seconds)
-#		- de ... declination of component (degree minutes seconds)
-# 		- flux ... source flux of component (Jy)
-#	- e.g., with the properties above a main component can be speficied by covering a large frequency range (fa,b) and a strong source flux.
-#
-# Header information:
-# 	source_name: 
-#		- name of the source (will be used in VieRDS and will be written to VEX file)
-#		- will be used instaed of name of file
-#		- the name of the file will be used internally to point to this file but the name won't be used for anything else.
-source_name: 2358+189
-# source_id, fa (MHz), fb (MHz), ra, de, flux (Jy)
-1, 8000.00, 9000.00, 00h01m8.62157s, 19d14'33.80174", 1
-2, 8000.00, 9000.00, 00h01m8.62157s, 19d14'33.80224", 0.8
+# fa (MHz), fb (MHz), ra, de, flux (Jy)
+8000.00, 9000.00, 00h01m8.62157s, 19d14'33.80174", 1
+8000.00, 9000.00, 00h01m8.62157s, 19d14'33.80224", 0.8
 

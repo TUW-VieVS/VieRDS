@@ -11,5 +11,6 @@ for iSt = 1:number_of_stations-1
         error('signal_type_target_source is NOT the same for both stations. That can not work (at least for this software version).')
     end
 end
+
 end
 

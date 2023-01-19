@@ -29,6 +29,9 @@ SIM_sta = create_SIM_sta(yes_match, no_match, sta, multi_channel_spec);
 % read in arbitrary magnitude response 
 [SIM_sta] = readArbMagResp(SIM_sta);
 
+% read multi-point source data
+[SIM_sta] = load_multi_point_source_data(SIM_sta);
+
 % station names and number of stations
 [ controling.stations, controling.NSt ] = station_struct_label( sta );
 

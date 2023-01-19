@@ -11,15 +11,16 @@ NSIM = length(P);
 
 for isim = 1:NSIM
     
-    % assing station SIM struct to new variable
+    % assigning station SIM struct to new variable
     p = P{isim,1};
     
-    
+    % get station names and number of stations
     [ St, Nst ] = station_struct_label( p );
     
-    
+    % loop through stations
     for iSt = 1:Nst
         
+        % 
         pj = p.(St{iSt});
         
         fn = fieldnames(pj);

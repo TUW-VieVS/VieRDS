@@ -1,7 +1,7 @@
 function [P] = readTonePhaseOffset(P)
 % reads tone phase offset file 
 %
-%    input:
+% input:
 %   P ... simulation struct
 %
 % output:
