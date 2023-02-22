@@ -13,6 +13,9 @@ s = input2si(s);
 % partners
 s = partner(s);
 
+% MPS channel allocation
+
+
 % exception handling
 s = exchandling(s);
 

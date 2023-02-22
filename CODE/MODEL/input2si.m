@@ -80,6 +80,20 @@ for ifn = 1:length(fn)
     if strcmp(curr_name,'delay_pcal')
         params.delay_pcals = params.delay_pcal*1e-9;
     end
+
+    % MPS
+    if strcmp(curr_name,'multi_point_source_data')
+        
+        % column 1: fa in Hz
+        params.multi_point_source_data{1, 1} = params.multi_point_source_data{1, 1}*10^6;
+
+        % column 2: fb as vector in Hz
+        params.multi_point_source_data{1, 2} = params.multi_point_source_data{1, 2}*10^6;
+
+        % column 3: 
+        
+    end
+
 end
 
 end

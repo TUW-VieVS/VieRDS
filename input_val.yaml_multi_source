@@ -1,0 +1,34 @@
+setup:
+  zero_bl: 0
+s1:
+  date_vec: [2020,1,28,17,30,00]
+  station_name: S1
+  station_name_8character: HARTRAO
+  station_name_trf_coord: Hh
+  sampling_frequency: 16
+  scan_length: 1
+  fluxdensity_targetsource: 20
+  fluxdensity_system: 60
+  f0: [8212.99, 8252.99, 8352.99, 8512.99, 8732.99, 8852.99, 8892.99, 8932.99]
+  number_of_bits: 1
+  signal_type_target_source: multi-point-gaussian-white-noise
+  source_name: 2358+189
+  multi_point_source_file_name: 2358+189.src
+s2:
+  date_vec: [2020,1,28,17,30,00]
+  station_name: S2
+  station_name_8character: WARK12M
+  station_name_trf_coord: Ww
+  sampling_frequency: 16
+  scan_length: 1
+  fluxdensity_targetsource: 20
+  fluxdensity_system: 60
+  f0: [8212.99, 8252.99, 8352.99, 8512.99, 8732.99, 8852.99, 8892.99, 8932.99]
+  number_of_bits: 1
+  signal_type_target_source: multi-point-gaussian-white-noise
+  source_name: 2358+189
+  multi_point_source_file_name: 2358+189.src
+
+
+
+
