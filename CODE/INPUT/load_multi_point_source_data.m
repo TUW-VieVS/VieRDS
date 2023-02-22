@@ -23,7 +23,7 @@ for isim=1:NSIM
         k = check_multi_point_source_input_specs(p);
 
         % read multi-point source data
-        [ SIM_sta{isim,1} ] = read_multi_point_source_data(k, p);
+        [ SIM_sta{isim,1}.(St{ist}) ] = read_multi_point_source_data(k, p);
 
     end
     

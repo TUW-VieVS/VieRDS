@@ -43,7 +43,7 @@ if isfield(p, 'multi_point_source_file_name')
         if id_source_name==1
             % check if source_name matches the name specified within the multi_point_source_file_name
             if strcmp(source_name_file,p.source_name)
-                fprintf('name specified in multi_point_source_file_name (%s) matchses source_name (%s)\n', p.source_name, p.multi_point_source_file_name);
+                fprintf('name specified in multi_point_source_file_name (%s) matches source_name (%s)\n', p.source_name, p.multi_point_source_file_name);
 
                 % in case multi_point_source_file_name is specified but
                 % signal_type_target_source is not set to multi-point-gaussian-white-noise
