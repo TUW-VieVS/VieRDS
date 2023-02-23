@@ -30,10 +30,11 @@ for iSt = 1:NSt
     end
     
     % special label vdif file name
-    special_label = 'test';
-    
+%     special_label = 'test';
+%     SIM_sta{ch_ind(1),1}.(stations{iSt}).special_label = 'feb';
+
     % vdif file name (values from first channel):
-    vdif_file_name = create_vdif_filename(SIM_sta{ch_ind(1),1}.(stations{iSt}).station_name, SIM_sta{ch_ind(1),1}.(stations{iSt}).sampling_frequency*10^-6, SIM_sta{ch_ind(1),1}.(stations{iSt}).number_of_bits, NCh, SIM_sta{ch_ind(1),1}.(stations{iSt}).scan_length, special_label);
+    vdif_file_name = create_vdif_filename(SIM_sta{ch_ind(1),1}.(stations{iSt}).station_name, SIM_sta{ch_ind(1),1}.(stations{iSt}).sampling_frequency*10^-6, SIM_sta{ch_ind(1),1}.(stations{iSt}).number_of_bits, NCh, SIM_sta{ch_ind(1),1}.(stations{iSt}).scan_length, SIM_sta{ch_ind(1),1}.(stations{iSt}).vdif_special_label_str, SIM_sta{ch_ind(1),1}.(stations{iSt}).vdif_special_label_int);
     
     % vdif file name according to OUT folder
     output_dir = [controling.output_folder_long];

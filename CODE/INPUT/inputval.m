@@ -165,6 +165,10 @@ p.phaseoff_super = 0;
     
     % interpolation method for delay rate
     p.delay_rate_interpolation_method = 'linear';
+
+%% vdif
+p.vdif_special_label_str = 'sim';
+p.vdif_special_label_int = '0';
     
 
 end
