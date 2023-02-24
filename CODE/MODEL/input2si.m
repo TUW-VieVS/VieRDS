@@ -85,12 +85,18 @@ for ifn = 1:length(fn)
     if strcmp(curr_name,'multi_point_source_data')
         
         % column 1: fa in Hz
-        params.multi_point_source_data{1, 1} = params.multi_point_source_data{1, 1}*10^6;
+        params.multi_point_source_data(:,1) = params.multi_point_source_data(:,1)*10^6;
 
-        % column 2: fb as vector in Hz
-        params.multi_point_source_data{1, 2} = params.multi_point_source_data{1, 2}*10^6;
+        % column 2: fb in Hz
+        params.multi_point_source_data(:,2) = params.multi_point_source_data(:,2)*10^6;
 
-        % column 3: 
+        % column 10: right ascension from vector (hour, min, sec) to rad
+        % (0, 2pi)
+        params.multi_point_source_data(:,10) = hms2rad(params.multi_point_source_data(:,3), params.multi_point_source_data(:,4), params.multi_point_source_data(:,5));
+
+        % column 11: declination from vector (deg, min, sec) to rad
+        % (-pi,pi)
+        params.multi_point_source_data(:,11) = dms2degrees([params.multi_point_source_data(:,6), params.multi_point_source_data(:,7), params.multi_point_source_data(:,8)]);
         
     end
 

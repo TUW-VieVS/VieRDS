@@ -13,8 +13,11 @@ s = input2si(s);
 % partners
 s = partner(s);
 
-% MPS channel allocation
+% basic model params
+s = modelparams_basics(s);
 
+% MPS channel allocation
+[outputArg1,outputArg2] = mps2channel(s.fa, s.fb, s.multi_point_source_data(:,1), s.multi_point_source_data(:,2));
 
 % exception handling
 s = exchandling(s);

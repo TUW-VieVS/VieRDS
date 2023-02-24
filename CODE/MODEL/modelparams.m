@@ -1,9 +1,6 @@
 function [ params ] = modelparams( params )
 % Used to calculate model parameters
 
-% basics
-params = modelparams_basics(params);
-
 % phase calibration
 params = modelparams_phasecal(params);  
 

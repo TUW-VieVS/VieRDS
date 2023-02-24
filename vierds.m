@@ -107,6 +107,8 @@ else
 end
 
 % DIFX directory
+% OUT DIFX
+controling.output_difx_folder_long = [controling.output_folder_long,controling.difx_folder];
 if exist(controling.difx_folder_long, 'dir')
     % folder exists
     copyfile(controling.difx_folder_long,controling.output_difx_folder_long(1:end-1));

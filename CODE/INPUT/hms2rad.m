@@ -1,14 +1,14 @@
-function [alpha] = hms2rad(h, min, sec)
+function [a] = hms2rad(h, m, s)
 % angle conversion: hours, minutes, seconds to radians
 %
 % input:
 %   h ... hour
-%   min ... minute
-%   sec ... second
+%   m ... minute
+%   s ... second
 %
 % output:
-%   alpha ... angle in radians (rad)
+%   a ... angle in radians (rad)
 
-alpha = 2*pi/24*(h+min/60+sec/60^2);
+a = 2*pi/24*(h+m/60+s/60^2);
 
 end
