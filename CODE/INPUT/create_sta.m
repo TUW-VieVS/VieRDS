@@ -69,10 +69,12 @@ controling = setcontroling;
 
 
 %% combine default and yaml input
+% if station parameters are defined in input_val.yaml file
 if ~isempty(fieldnames(sta_yaml))
     sta = combine_structs(sta, sta_yaml);
 end
 
+% if setup parameters are defined in input_val.yaml file
 if ~isempty(fieldnames(sta_yaml))
     controling = combine_structs(controling, setup_yaml);
 end

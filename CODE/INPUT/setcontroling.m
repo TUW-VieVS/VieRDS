@@ -3,8 +3,9 @@ function controling = setcontroling
 
 %% folder
 % create name for output folder based on time-tag
-controling.output_folder = char(datetime('now','Format','yyyy_DDD_HH_mm_ss'));
-controling.output_folder_long = ['OUT/',controling.output_folder,'/'];
+controling.current_date = char(datetime('now','Format','yyyy_DDD_HH_mm_ss'));
+controling.output_folder = 'OUT/';
+controling.output_folder_long = [controling.output_folder, controling.current_date,'/'];
 
 % CODE
 controling.code_folder = 'CODE/';
@@ -13,8 +14,7 @@ controling.code_folder = 'CODE/';
 controling.difx_folder = 'DIFX/';
 controling.difx_folder_long = 'DIFX/';
 
-% OUT DIFX
-controling.output_difx_folder_long = [controling.output_folder_long,controling.difx_folder];
+
 
 
 %% vdif
