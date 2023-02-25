@@ -22,7 +22,8 @@ if k == 1
     fclose(fileID);
 
     % check mpd data
-    [p.multi_point_source_data] = check_mps_input_data(p.multi_point_source_data);
+    [p.multi_point_source_data, p.mpsd_i] = check_mps_input_data(p.multi_point_source_data);
+
 end
 
 end

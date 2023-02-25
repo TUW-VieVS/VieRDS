@@ -1,4 +1,4 @@
-function [mpsd] = check_mps_input_data(mpsd_str)
+function [mpsd, mpsd_i] = check_mps_input_data(mpsd_str)
 % check multi point source data (mpsd) and convert text to double format
 %
 % input:
@@ -6,6 +6,9 @@ function [mpsd] = check_mps_input_data(mpsd_str)
 %
 % output:
 %   mpsd ... array with converted text to double
+
+% validity of MPSD data
+mpsd_i = 0;
 
 % check if there are entries
 if ~isempty(mpsd_str{1})
@@ -56,6 +59,9 @@ if ~isempty(mpsd_str{1})
         if ~isempty(find(mpsd(:,9) == 0, 1))
             warning('Source flux in multi-point source data is zero. Corresponding source signal will not be simulated. Are you sure?')
         end
+        
+        % MPS data is valid
+        mpsd_i = 1;
         
     end
 else

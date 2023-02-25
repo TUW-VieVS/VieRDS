@@ -169,7 +169,10 @@ p.phaseoff_super = 0;
 %% vdif
 p.vdif_special_label_str = 'sim';
 p.vdif_special_label_int = '0';
-    
+
+%% mpsd
+% false
+p.mpsd_i = 0;
 
 end
 
