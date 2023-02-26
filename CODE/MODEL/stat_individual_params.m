@@ -17,7 +17,7 @@ s = partner(s);
 s = modelparams_basics(s);
 
 % inital MPS params
-s = MPSparams(s);
+s = MPSparams(s, controling, ref_frame );
 
 % exception handling
 s = exchandling(s);

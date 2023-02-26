@@ -57,7 +57,7 @@ s_crf_sph = reshape(s_crf_sph,[2,1]);
 [s_crf_cart(1), s_crf_cart(2), s_crf_cart(3)] = sph2cart(s_crf_sph(1), s_crf_sph(2), 1);
 
 % check length
-if norm(s_crf_cart)~=1
+if abs(1-norm(s_crf_cart))>1e-3
     warning('s0 does not have length 1 ... danger')
 end
 
