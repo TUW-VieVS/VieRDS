@@ -90,6 +90,9 @@ for ifn = 1:length(fn)
         % column 2: fb in Hz
         params.multi_point_source_data(:,2) = params.multi_point_source_data(:,2)*10^6;
 
+        % flux density receiver (SEFD) Jy --> W*m^-2*Hz^-1 = Jy *10^-26 
+        params.multi_point_source_data(:,9) = params.multi_point_source_data(:,9) * 10^-26;
+        
         % column 10: right ascension from vector (hour, min, sec) to rad
         % (0, 2pi)
         params.multi_point_source_data(:,10) = hms2rad(params.multi_point_source_data(:,3), params.multi_point_source_data(:,4), params.multi_point_source_data(:,5));

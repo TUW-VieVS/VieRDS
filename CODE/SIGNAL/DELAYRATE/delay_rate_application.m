@@ -81,20 +81,30 @@ end
 % single side band modulation
 if strcmp(p.delay_rate_application_method,'single-side-band-modulation')   
     
-    dtau = [p.p_tm.signal_arrival_station_center_sample(:).delta_tau_geocenter];
-    dates = [p.p_tm.signal_arrival_station_center_sample(:).datetime];
-    
-    Ns = length(x);
-    Tx = p.sampling_interval;
-    
-    % query points for interpolation
-    xq = dates(1)+seconds((0:Ns-1)*Tx);
-    
-    % delay interpolation
-    dtaui = interp1(dates,dtau,xq,'pchip','extrap');
-    
-    fprintf('Single-sideband modulation:\n')
-    [y] = single_side_band_modulation(x,p.f0,dtaui,p.sampling_interval);
+    % check if multi-point source simulation is activated
+    if s.mpsd_i == 1
+        
+        % for each point-source
+        for i = 1:p.number_of_MPS
+            
+        end
+
+    else
+        dtau = [p.p_tm.signal_arrival_station_center_sample(:).delta_tau_geocenter];
+        dates = [p.p_tm.signal_arrival_station_center_sample(:).datetime];
+        
+        Ns = length(x);
+        Tx = p.sampling_interval;
+        
+        % query points for interpolation
+        xq = dates(1)+seconds((0:Ns-1)*Tx);
+        
+        % delay interpolation
+        dtaui = interp1(dates,dtau,xq,'pchip','extrap');
+        
+        fprintf('Single-sideband modulation:\n')
+        [y] = single_side_band_modulation(x,p.f0,dtaui,p.sampling_interval);
+    end
         
 end
 

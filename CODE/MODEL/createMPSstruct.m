@@ -36,7 +36,7 @@ if ~isempty(find(J ~= 0, 1))
         
         % assign Sf
         MPS(i).Sf = M(K(i),9);
-        
+       
         % assign RA (rad)
         MPS(i).RA_rad = M(K(i),10);
         
