@@ -17,46 +17,49 @@ if ~isempty(mpsd_str{1})
     [~,c] = size(mpsd_str);
     
     % check number of clumns
-    if c~=5
-        warning('Please check multi-point source file. The number of columns is not four.')
+    if c~=6
+        warning('Please check multi-point source file. The number of columns is not six.')
     else
         
         % number of rows
         r = length(mpsd_str{1, 1});
         
         % pre-allocate mpsd
-        mpsd = zeros(r,9);
+        mpsd = zeros(r,10);
         
         % copy first column
         mpsd(:,1)=mpsd_str{1, 1};
         
         % copy second column
         mpsd(:,2)=mpsd_str{1, 2};
+
+        % copy third column
+        mpsd(:,3)=mpsd_str{1, 3};
         
         % check if frequency entries are correct
-        if ~isempty(find(mpsd(:,2) - mpsd(:,1) <= 0, 1))
+        if ~isempty(find(mpsd(:,3) - mpsd(:,2) <= 0, 1))
             error('Wrong frequency entry in multi-point source data')
         end
         
-        % format third and fourth column
+        % format fourth and fifth column
         for i=1:r
             % RA
-            [mpsd(i,3:5),~,~] = sscanf(mpsd_str{1, 3}{i} ,'%fh%fm%fs');
+            [mpsd(i,4:6),~,~] = sscanf(mpsd_str{1, 4}{i} ,'%fh%fm%fs');
             
             % DE
-            [mpsd(i,6:8),~,~] = sscanf(mpsd_str{1, 4}{i} ,'%fd%f''%f''');
+            [mpsd(i,7:9),~,~] = sscanf(mpsd_str{1, 5}{i} ,'%fd%f''%f''');
         end
         
-        % copy fifth column
-        mpsd(:,9)=mpsd_str{1, 5};
+        % copy sixth column
+        mpsd(:,10)=mpsd_str{1, 6};
         
         % check if source flux is negative
-        if ~isempty(find(mpsd(:,9) < 0, 1))
+        if ~isempty(find(mpsd(:,10) < 0, 1))
             error('Source flux in multi-point source data is negative')
         end
         
         % check if source flux is zero
-        if ~isempty(find(mpsd(:,9) == 0, 1))
+        if ~isempty(find(mpsd(:,10) == 0, 1))
             warning('Source flux in multi-point source data is zero. Corresponding source signal will not be simulated. Are you sure?')
         end
         

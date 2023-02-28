@@ -84,22 +84,22 @@ for ifn = 1:length(fn)
     % MPS
     if strcmp(curr_name,'multi_point_source_data')
         
-        % column 1: fa in Hz
-        params.multi_point_source_data(:,1) = params.multi_point_source_data(:,1)*10^6;
-
-        % column 2: fb in Hz
+        % column 2: fa in Hz
         params.multi_point_source_data(:,2) = params.multi_point_source_data(:,2)*10^6;
 
+        % column 3: fb in Hz
+        params.multi_point_source_data(:,3) = params.multi_point_source_data(:,3)*10^6;
+
         % flux density receiver (SEFD) Jy --> W*m^-2*Hz^-1 = Jy *10^-26 
-        params.multi_point_source_data(:,9) = params.multi_point_source_data(:,9) * 10^-26;
+        params.multi_point_source_data(:,10) = params.multi_point_source_data(:,10) * 10^-26;
         
-        % column 10: right ascension from vector (hour, min, sec) to rad
+        % column 11: right ascension from vector (hour, min, sec) to rad
         % (0, 2pi)
-        params.multi_point_source_data(:,10) = hms2rad(params.multi_point_source_data(:,3), params.multi_point_source_data(:,4), params.multi_point_source_data(:,5));
+        params.multi_point_source_data(:,11) = hms2rad(params.multi_point_source_data(:,4), params.multi_point_source_data(:,5), params.multi_point_source_data(:,6));
 
         % column 11: declination from vector (deg, min, sec) to rad
         % (-pi,pi)
-        params.multi_point_source_data(:,11) = deg2rad(dms2degrees([params.multi_point_source_data(:,6), params.multi_point_source_data(:,7), params.multi_point_source_data(:,8)]));
+        params.multi_point_source_data(:,12) = deg2rad(dms2degrees([params.multi_point_source_data(:,7), params.multi_point_source_data(:,8), params.multi_point_source_data(:,9)]));
         
     end
 

@@ -16,7 +16,7 @@ if k == 1
     fileID = fopen(p.multi_point_source_file_name);
 
     % read data
-    p.multi_point_source_data = textscan(fileID,'%f %f %s %s %f','Delimiter',',','HeaderLines',1);
+    p.multi_point_source_data = textscan(fileID,'%f %f %f %s %s %f','Delimiter',',','HeaderLines',1);
 
     % close file
     fclose(fileID);
