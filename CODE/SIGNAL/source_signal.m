@@ -11,15 +11,33 @@ function p = source_signal( p )
 % check for gaussian-white-noise
 if strcmp( p.signal_type_target_source, 'gaussian-white-noise')
     % create noise
-    p.x_source = gennoise( p.number_of_samples_max );
+    p.x_source = gennoise( 1, p.number_of_samples_max );
 end
 
 % check for multi-component source (source structure soft)
-if strcmp( p.signal_type_target_source, 'here comes a nice name')
+if strcmp( p.signal_type_target_source, 'multi-point-gaussian-white-noise')
     % create noises as a matrix or how to store it?
     % signal type: gaussian-white-noise
     % parameters: number of point-source components
     % delay, delay rate, source flux per station
+    
+    % check if MPS data exists
+    if isfield(p,'StaSourceID')
+        % unique source indices
+        p.source_indices = unique(p.StaSourceID);
+
+        % number of unique point sources
+        p.num_sources = length(p.source_indices);
+
+        % source signal array
+        p.x_source = gennoise( p.num_sources, p.number_of_samples_max );
+
+    else
+        % create noise
+        p.x_source = gennoise( 1, p.number_of_samples_max );
+    end
+   
+
 end
 
 % check for APOD

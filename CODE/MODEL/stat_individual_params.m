@@ -56,6 +56,7 @@ if ~contains(s.signal_type_target_source, 'multi-point-gaussian-white-noise')
         s.EOP_vex = EOP_vex;
         s.X_trf = [4.0755139837000000e+06,9.317353092000000e+05,4.801629401000000e+06];
         s.s_crf_sph = [1,0];
+        [s] = source_specs_per_station_basic(s);
 
     end
 else
@@ -83,6 +84,7 @@ else
     s.EOP_vex = EOP_vex;
     s.X_trf = [4.0755139837000000e+06,9.317353092000000e+05,4.801629401000000e+06];
     s.s_crf_sph = [1,0];
+    [s] = source_specs_per_station_basic(s);
 
 end
 

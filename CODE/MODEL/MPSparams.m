@@ -46,6 +46,9 @@ if s.mpsd_i == 1
                 % a priori source coordinates
                 s.s_crf_sph = [s.MPS(i).RA_rad, s.MPS(i).DE_rad]';
                 
+                % basic source specs per station
+                [s] = source_specs_per_station_basic(s);
+                
                 % calculate p_tm struct per souce
                 tmp = modelparams_referenceframe(s, ref_frame, controling);   
                 
