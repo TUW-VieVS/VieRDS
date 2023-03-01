@@ -174,5 +174,9 @@ p.vdif_special_label_int = '0';
 % false
 p.mpsd_i = 0;
 
+%% delay and delay rate configuration
+p.delay_rate_application_YN = 1;
+p.delay3step_YN = 1;
+
 end
 

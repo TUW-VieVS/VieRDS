@@ -30,19 +30,30 @@ for isrc = 1:p.number_of_MPS
         % non-zero baseline algorithms (delay and delay rate) will be applied
         fprintf('non-zero baseline simulation selected: station delay and delay rate will be applied\n')
        
-        % assign kinematic params from MPS struct for delay_rate_application to "global" station params
-        p.p_tm = p.MPS(isrc).p_tm;
-        
-        % delay rate application
-        p.x_source(isrc,:) = delay_rate_application(p.x_source(isrc,:), p);    
+        % check if delay rate application is turned on
+        if p.delay_rate_application_YN == 1        
+            % assign kinematic params from MPS struct for delay_rate_application to "global" station params
+            p.p_tm = p.MPS(isrc).p_tm;
+            
+            % delay rate application
+            p.x_source(isrc,:) = delay_rate_application(p.x_source(isrc,:), p);    
+        else
+            % print 
+            fprintf('Non-zero baseline simulation is actived but delay rate application is deactivated.\n')
+        end
 
-        % assign kinematic params from MPS struct for delay3step to "global" station struct
-        p.signal_arrives_at_station = p.MPS(isrc).signal_arrives_at_station;
-
-        % delay source signal
-    %     p.x_source = delay_source_signal(p.x_source,p);
-        [p.x_source(isrc,:)] = delay3step(p.x_source(isrc,:), p.signal_arrives_at_station.sample_delay_rounded, p.signal_arrives_at_station.sample_frac_delay, p.signal_arrives_at_station.phase_offset_fa,  p.fractional_delay_filter_ntaps, p.fractional_delay_filter_stopBandAtt);
-        
+        % check if delay application is turned on
+        if p.delay3step_YN == 1
+            % assign kinematic params from MPS struct for delay3step to "global" station struct
+            p.signal_arrives_at_station = p.MPS(isrc).signal_arrives_at_station;
+    
+            % delay source signal
+        %     p.x_source = delay_source_signal(p.x_source,p);
+            [p.x_source(isrc,:)] = delay3step(p.x_source(isrc,:), p.signal_arrives_at_station.sample_delay_rounded, p.signal_arrives_at_station.sample_frac_delay, p.signal_arrives_at_station.phase_offset_fa,  p.fractional_delay_filter_ntaps, p.fractional_delay_filter_stopBandAtt);
+        else
+            % print
+            fprintf('Non-zero baseline simulation is actived but delay application is deactived.\n')
+        end     
     end
     
     % the application of a specific delay and phase offset is only possible
