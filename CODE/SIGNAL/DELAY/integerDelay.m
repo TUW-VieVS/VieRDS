@@ -14,7 +14,7 @@ if mod(n0,1)~=0
 end
 
 % noise for padding
-x_padding_noise = sqrt(var(x))*gennoise( abs(n0) );
+x_padding_noise = sqrt(var(x))*gennoise( 1, abs(n0) );
 
 if n0 > 0
     

@@ -21,32 +21,62 @@ p.x_source = params_common.x_source;
 % saved to p.x_source anyway.
 params_common.x_source = [];
 
-% non-zero or zero baseline simulation
-if contr.zero_bl == 0
+% per source signal
+for isrc = 1:p.number_of_MPS
 
-    % non-zero baseline algorithms (delay and delay rate) will be applied
-    fprintf('non-zero baseline simulation selected: station delay and delay rate will be applied\n')
-   
-    % delay rate application
-    p.x_source = delay_rate_application(p.x_source, p);    
+    % non-zero or zero baseline simulation
+    if contr.zero_bl == 0
     
-    % delay source signal
-%     p.x_source = delay_source_signal(p.x_source,p);
-    [p.x_source] = delay3step(p.x_source, p.signal_arrives_at_station.sample_delay_rounded, p.signal_arrives_at_station.sample_frac_delay, p.signal_arrives_at_station.phase_offset_fa,  p.fractional_delay_filter_ntaps, p.fractional_delay_filter_stopBandAtt);
+        % non-zero baseline algorithms (delay and delay rate) will be applied
+        fprintf('non-zero baseline simulation selected: station delay and delay rate will be applied\n')
+       
+        % assign kinematic params from MPS struct for delay_rate_application to "global" station params
+        p.p_tm = p.MPS(isrc).p_tm;
+        
+        % delay rate application
+        p.x_source(isrc,:) = delay_rate_application(p.x_source(isrc,:), p);    
+
+        % assign kinematic params from MPS struct for delay3step to "global" station struct
+        p.signal_arrives_at_station = p.MPS(isrc).signal_arrives_at_station;
+
+        % delay source signal
+    %     p.x_source = delay_source_signal(p.x_source,p);
+        [p.x_source(isrc,:)] = delay3step(p.x_source(isrc,:), p.signal_arrives_at_station.sample_delay_rounded, p.signal_arrives_at_station.sample_frac_delay, p.signal_arrives_at_station.phase_offset_fa,  p.fractional_delay_filter_ntaps, p.fractional_delay_filter_stopBandAtt);
+        
+    end
     
+    % the application of a specific delay and phase offset is only possible
+    % for one source signal component. Hence, it is not possible for MPS
+    % data. But this can be implemented by adding additional columns in the
+    % .src file.
+    if p.number_of_MPS == 1
+        % delay signal component (includes als phase offset)
+        [p] = delaySignalComponent(p);
+        
+        % phase offset signal component (in addition to the integer sample delay, fractional sample delay and phase offset application, there can be also a phase offset to the signal: this enables non-linear group delays for broadband)
+        [p] = phaseOffSignalComponent(p);
+    end
+
+    % source signal adjustment (transform to standard normal distribution and scale by sigma)
+    p.x_source(isrc,:) = sourcesignal_adjustment(p.x_source(isrc,:), p.MPS(isrc).sigma_targetsource,p.signal_type_target_source);
+    
+    % the application of a arbmag filter is only possible
+    % for one source signal component. Hence, it is not possible for MPS
+    % data. But this can be implemented by adding additional columns in the
+    % .src file.
+    if p.number_of_MPS == 1
+        % filter signal component (arbitrary magnitude filter signal type)
+        [p] = filterSignalComponent(p);
+    end
 end
 
-% delay signal component (includes als phase offset)
-[p] = delaySignalComponent(p);
+% superposition of source signals
+if p.number_of_MPS > 1
+    
+    % vector addition
+    p.x_source = sum(p.x_source, 1);
 
-% phase offset signal component (in addition to the integer sample delay, fractional sample delay and phase offset application, there can be also a phase offset to the signal: this enables non-linear group delays for broadband)
-[p] = phaseOffSignalComponent(p);
-
-% source signal adjustment
-p.x_source = sourcesignal_adjustment(p.x_source, p.sigma_targetsource,p.signal_type_target_source);
-
-% filter signal component
-[p] = filterSignalComponent(p);
+end
 
 %%%%%%%% superposition
 
