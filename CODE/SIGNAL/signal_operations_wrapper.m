@@ -42,6 +42,21 @@ for isrc = 1:p.number_of_MPS
             fprintf('Non-zero baseline simulation is actived but delay rate application is deactivated.\n')
         end
 
+        % check if relative delays are activated
+        if p.relative_delays_YN == 1
+            % cehck if absolute delays are activated
+            if p.delay3step_YN == 1
+                error('You have actived relative delays and absolute delays at the same time. This does probably not make sense')
+            end
+            
+            % assign kinematic params from MPS struct for delay3step to "global" station struct
+            p.signal_arrives_at_station = p.MPS(isrc).signal_arrives_at_station;
+
+            % delay source signal by relative delays
+            [p.x_source(isrc,:)] = delay3step(p.x_source(isrc,:), p.signal_arrives_at_station.dsample_delay_rounded, p.signal_arrives_at_station.dsample_frac_delay, p.signal_arrives_at_station.dphase_offset_fa,  p.fractional_delay_filter_ntaps, p.fractional_delay_filter_stopBandAtt);
+           
+        end
+
         % check if delay application is turned on
         if p.delay3step_YN == 1
             % assign kinematic params from MPS struct for delay3step to "global" station struct
@@ -50,10 +65,13 @@ for isrc = 1:p.number_of_MPS
             % delay source signal
         %     p.x_source = delay_source_signal(p.x_source,p);
             [p.x_source(isrc,:)] = delay3step(p.x_source(isrc,:), p.signal_arrives_at_station.sample_delay_rounded, p.signal_arrives_at_station.sample_frac_delay, p.signal_arrives_at_station.phase_offset_fa,  p.fractional_delay_filter_ntaps, p.fractional_delay_filter_stopBandAtt);
+               
         else
             % print
             fprintf('Non-zero baseline simulation is actived but delay application is deactived.\n')
-        end     
+        end
+
+
     end
     
     % the application of a specific delay and phase offset is only possible

@@ -111,4 +111,47 @@ for iF = 1:nF
     end
 end
 
+%% relative delay and delay rate params
+% per station
+for iF = 1:nF
+    % check if MPS is true
+    if s.(fnames{iF}).mpsd_i == 1
+        % per point source
+        for iMPS = 1:s.(fnames{iF}).number_of_MPS
+
+            % tmp struct
+            c = s.(fnames{iF}).MPS(iMPS).signal_arrives_at_station;
+
+            % reference values are the ones from the first station and the
+            % first point source
+            if iF==1 && iMPS==1
+                refval = c;
+            end
+
+            % calc relative params, SI units
+            s.(fnames{iF}).MPS(iMPS).signal_arrives_at_station = calcRelTauParams(c,refval);
+
+            % calculate relative sample delays
+            [s.(fnames{iF}).MPS(iMPS).signal_arrives_at_station.dsample_delay, s.(fnames{iF}).MPS(iMPS).signal_arrives_at_station.dsample_delay_rounded, s.(fnames{iF}).MPS(iMPS).signal_arrives_at_station.dsample_frac_delay] = calculateIntegerFractDelay(s.(fnames{iF}).MPS(iMPS).signal_arrives_at_station.dtau  , s.(fnames{iF}).sampling_interval);
+
+        end
+    else
+
+        % tmp struct
+        c = s.(fnames{iF}).signal_arrives_at_station;
+
+        % reference values are the ones from the first station and the
+        % first point source
+        if iF==1
+            refval = c;
+        end
+
+        % calc relative params
+        s.(fnames{iF}).signal_arrives_at_station = calcRelTauParams(c,refval);
+
+        % calculate relative sample delays
+        [s.(fnames{iF}).signal_arrives_at_station.dsample_delay, s.(fnames{iF}).signal_arrives_at_station.dsample_delay_rounded, s.(fnames{iF}).signal_arrives_at_station.dsample_frac_delay] = calculateIntegerFractDelay(s.(fnames{iF}).signal_arrives_at_station.dtau  , s.(fnames{iF}).sampling_interval);
+
+    end
+end
 

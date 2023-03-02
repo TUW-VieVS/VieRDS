@@ -89,18 +89,19 @@ tau = p_tm.signal_arrival_station_first_sample(id).tau_geocenter;
 ntau = p_tm.signal_arrival_station_first_sample(id).sample_tau_geocenter;
 dr = p_tm.signal_arrival_station_first_sample(id).delay_rate;
 
-    % determine phase offset at sky frequency
-    Tx = sampling_interval;
-    [phi0_rad,phi0_sample] = skyFreqPhaseOffset(fa,tau,Tx);
+% determine phase offset at sky frequency
+Tx = sampling_interval;
+[phi0_rad,phi0_sample] = skyFreqPhaseOffset(fa,tau,Tx);
 
-    % re-storage
-    signal_arrives_at_station.delay_rate = dr;
-    signal_arrives_at_station.sample_delay = ntau;
-    signal_arrives_at_station.sample_delay_rounded = round(ntau);
-    signal_arrives_at_station.sample_frac_delay = ntau-round(ntau);
+% re-storage
+signal_arrives_at_station = reStorageSignalArrivesAtStation(tau, dr, ntau, phi0_rad, phi0_sample);
 
-    signal_arrives_at_station.phase_offset_fa = phi0_rad;
-    signal_arrives_at_station.tau_phase_offset_fa = phi0_sample;
+% unfortunately this is not supported for MPS
+%%%%%% calculate integer delay, fractional delay, phase offset for addtional delay
+% [p.delay_source_n,p.delay_source_n0,p.delay_source_dn,p.delay_source_phi0,p.delay_source_phi0s] = calcSampleDelayParams(p.delay_source,Tx,fa);
+% [p.delay_system_n,p.delay_system_n0,p.delay_system_dn,p.delay_system_phi0,p.delay_system_phi0s] = calcSampleDelayParams(p.delay_system,Tx,fa);
+% [p.delay_super_n,p.delay_super_n0,p.delay_super_dn,p.delay_super_phi0, p.delay_super_phi0s] = calcSampleDelayParams(p.delay_super,Tx,fa);
+% [p.delay_pcal_n,p.delay_pcal_n0,p.delay_pcal_dn,p.delay_pcal_phi0,p.delay_pcal_phi0s] = calcSampleDelayParams(p.delay_pcal,Tx,fa);
     
 end
 

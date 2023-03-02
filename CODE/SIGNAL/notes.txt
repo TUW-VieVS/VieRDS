@@ -1,0 +1,1 @@
+[p.x_source(isrc,:)] = delay3step(p.x_source(isrc,:), p.signal_arrives_at_station.sample_delay_rounded, p.signal_arrives_at_station.sample_frac_delay, p.signal_arrives_at_station.phase_offset_fa,  p.fractional_delay_filter_ntaps, p.fractional_delay_filter_stopBandAtt);

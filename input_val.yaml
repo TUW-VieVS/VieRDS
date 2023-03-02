@@ -14,6 +14,9 @@ s1:
   signal_type_target_source: multi-point-gaussian-white-noise
   source_name: 2358+189
   multi_point_source_file_name: 2358+189_1.src
+  delay_rate_application_YN: 0
+  delay3step_YN: 0
+  relative_delays_YN: 1
 s2:
   date_vec: [2020,1,28,17,30,00]
   station_name: S2
@@ -28,3 +31,7 @@ s2:
   signal_type_target_source: multi-point-gaussian-white-noise
   source_name: 2358+189
   multi_point_source_file_name: 2358+189_2.src
+  delay_rate_application_YN: 0
+  delay3step_YN: 0
+  relative_delays_YN: 1
+

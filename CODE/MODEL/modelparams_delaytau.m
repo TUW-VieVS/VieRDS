@@ -91,19 +91,14 @@ tau = p.p_tm.signal_arrival_station_first_sample(id).tau_geocenter;
 ntau = p.p_tm.signal_arrival_station_first_sample(id).sample_tau_geocenter;
 dr = p.p_tm.signal_arrival_station_first_sample(id).delay_rate;
 
-    % determine phase offset at sky frequency
-    Tx = p.sampling_interval;
-    fa = p.fa;
-    [phi0_rad,phi0_sample] = skyFreqPhaseOffset(fa,tau,Tx);
+% determine phase offset at sky frequency
+Tx = p.sampling_interval;
+fa = p.fa;
+[phi0_rad,phi0_sample] = skyFreqPhaseOffset(fa,tau,Tx);
 
-    % re-storage
-    p.signal_arrives_at_station.delay_rate = dr;
-    p.signal_arrives_at_station.sample_delay = ntau;
-    p.signal_arrives_at_station.sample_delay_rounded = round(ntau);
-    p.signal_arrives_at_station.sample_frac_delay = ntau-round(ntau);
+% re-storage
+p.signal_arrives_at_station = reStorageSignalArrivesAtStation(tau, dr, ntau, phi0_rad, phi0_sample);
 
-    p.signal_arrives_at_station.phase_offset_fa = phi0_rad;
-    p.signal_arrives_at_station.tau_phase_offset_fa = phi0_sample;
     
     
 %%%%%% calculate integer delay, fractional delay, phase offset for addtional delay

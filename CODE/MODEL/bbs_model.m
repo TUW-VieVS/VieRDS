@@ -23,7 +23,6 @@ for iSt = 1:NSt
 end
 
 %% station common
-
 % model parameters extended
 [params_common,sta] = modelparams_ext( sta );
 
