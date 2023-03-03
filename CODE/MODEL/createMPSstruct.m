@@ -20,9 +20,10 @@ if ~isempty(find(J ~= 0, 1))
     % number of matches
     N = sum(J);
     
-    %
+    % index of matches
     K = find(J);
     
+    % loop over matches
     for i = 1:N
         
         % assgin index

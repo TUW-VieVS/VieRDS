@@ -1,37 +1,31 @@
 setup:
-  zero_bl: 0
+  zero_bl: 1
 s1:
-  date_vec: [2020,1,28,06,00,00]
+  date_vec: [2020,1,28,17,30,00]
   station_name: S1
-  station_name_8character: WETTZ13N
-  station_name_trf_coord: Wn
-  sampling_frequency: 16
+  station_name_8character: WETTZELL
+  station_name_trf_coord: Wz
+  sampling_frequency: 8
   scan_length: 1
-  fluxdensity_targetsource: 20
-  fluxdensity_system: 60
-  f0: [4000.99]
+  fluxdensity_targetsource: 10
+  fluxdensity_system: 50
+  f0: 3016.30
   number_of_bits: 1
-  signal_type_target_source: multi-point-gaussian-white-noise
-  source_name: 0333+321
-  multi_point_source_file_name: 0333+321.src
-  delay_rate_application_YN: 0
-  delay3step_YN: 0
-  relative_delays_YN: 1
+  source_name: 0026+892
+  bandpass_filter_name: default
 s2:
-  date_vec: [2020,1,28,06,00,00]
+  date_vec: [2020,1,28,17,30,00]
   station_name: S2
-  station_name_8character: GGAO12M 
-  station_name_trf_coord: Gs
-  sampling_frequency: 16
+  station_name_8character: YEBES12M
+  station_name_trf_coord: Ys
+  sampling_frequency: 8
   scan_length: 1
-  fluxdensity_targetsource: 20
-  fluxdensity_system: 60
-  f0: [4000.99]
+  fluxdensity_targetsource: 10
+  fluxdensity_system: 50
+  f0: 3016.30
   number_of_bits: 1
-  signal_type_target_source: multi-point-gaussian-white-noise
-  source_name: 0333+321
-  multi_point_source_file_name: 0333+321.src
-  delay_rate_application_YN: 0
-  delay3step_YN: 0
-  relative_delays_YN: 1
+  source_name: 0026+892
+  bandpass_filter_name: default
+
+
 

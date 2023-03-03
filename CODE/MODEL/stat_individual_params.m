@@ -59,8 +59,8 @@ if ~contains(s.signal_type_target_source, 'multi-point-gaussian-white-noise')
         [s] = source_specs_per_station_basic(s);
 
     end
-else
 
+else
     % zero baseline: set all kinematic params to zero to avoid any impact of earth-orientation affects
     % define p_tm params and make things clearer in code
     %     warning('make sure all parameters that are created within modelparams_referenceframe are also specified in zero_kinematics');
@@ -85,7 +85,6 @@ else
     s.X_trf = [4.0755139837000000e+06,9.317353092000000e+05,4.801629401000000e+06];
     s.s_crf_sph = [1,0];
     [s] = source_specs_per_station_basic(s);
-
 end
 
 % models

@@ -97,7 +97,7 @@ for ifn = 1:length(fn)
         % (0, 2pi)
         params.multi_point_source_data(:,11) = hms2rad(params.multi_point_source_data(:,4), params.multi_point_source_data(:,5), params.multi_point_source_data(:,6));
 
-        % column 11: declination from vector (deg, min, sec) to rad
+        % column 12: declination from vector (deg, min, sec) to rad
         % (-pi,pi)
         params.multi_point_source_data(:,12) = deg2rad(dms2degrees([params.multi_point_source_data(:,7), params.multi_point_source_data(:,8), params.multi_point_source_data(:,9)]));
         

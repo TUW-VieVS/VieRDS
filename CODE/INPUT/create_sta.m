@@ -38,7 +38,7 @@ else
     setup_yaml = struct;
 end
 
-% onyl station yaml file content
+% only station yaml file content
 fn_yaml = fieldnames(sta_yaml); % stations specified
 if isempty(fn_yaml)
     

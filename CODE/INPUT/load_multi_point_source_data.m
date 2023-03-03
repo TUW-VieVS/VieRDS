@@ -12,7 +12,6 @@ for isim=1:NSIM
     % get station names and number of stations
     [ St, Nst ] = station_struct_label( P );
 
-
     % loop through stations
     for ist=1:Nst
     
