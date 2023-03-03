@@ -1,10 +1,10 @@
 setup:
   zero_bl: 0
 s1:
-  date_vec: [2020,1,28,17,30,00]
+  date_vec: [2020,1,28,06,00,00]
   station_name: S1
-  station_name_8character: HARTRAO
-  station_name_trf_coord: Hh
+  station_name_8character: WETTZ13N
+  station_name_trf_coord: Wn
   sampling_frequency: 16
   scan_length: 1
   fluxdensity_targetsource: 20
@@ -12,16 +12,16 @@ s1:
   f0: [4000.99]
   number_of_bits: 1
   signal_type_target_source: multi-point-gaussian-white-noise
-  source_name: 2358+189
-  multi_point_source_file_name: 2358+189_1.src
+  source_name: 0333+321
+  multi_point_source_file_name: 0333+321.src
   delay_rate_application_YN: 0
   delay3step_YN: 0
   relative_delays_YN: 1
 s2:
-  date_vec: [2020,1,28,17,30,00]
+  date_vec: [2020,1,28,06,00,00]
   station_name: S2
-  station_name_8character: WARK12M
-  station_name_trf_coord: Ww
+  station_name_8character: GGAO12M 
+  station_name_trf_coord: Gs
   sampling_frequency: 16
   scan_length: 1
   fluxdensity_targetsource: 20
@@ -29,8 +29,8 @@ s2:
   f0: [4000.99]
   number_of_bits: 1
   signal_type_target_source: multi-point-gaussian-white-noise
-  source_name: 2358+189
-  multi_point_source_file_name: 2358+189_2.src
+  source_name: 0333+321
+  multi_point_source_file_name: 0333+321.src
   delay_rate_application_YN: 0
   delay3step_YN: 0
   relative_delays_YN: 1

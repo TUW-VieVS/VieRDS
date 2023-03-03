@@ -25,3 +25,13 @@ source_main_flux:
 ...  ... ... ... 
 
 - find also a zero-baseline solution for extended source structure
+
+
+Ws:
+ TRF coordinates:                         X: 4075513.983700 m
+                                          Y: 931735.309200 m
+                                          Z: 4801629.401000 m
+Gs:
+ TRF coordinates:                         X: 4075513.983700 m
+                                          Y: 931735.309200 m
+                                          Z: 4801629.401000 m
