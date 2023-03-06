@@ -1,6 +1,8 @@
 function [ params ] = modelparams( params )
 % Used to calculate model parameters
 
+[params] = source_specs_per_station_basic(params);
+
 % phase calibration
 params = modelparams_phasecal(params);  
 

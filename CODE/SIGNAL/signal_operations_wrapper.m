@@ -120,7 +120,7 @@ else
         fprintf('non-zero baseline simulation selected: station delay and delay rate will be applied\n')
 
         % delay rate application
-        p.x_source = delay_rate_application(params_common.x_source, p);
+        p.x_source = delay_rate_application(p.x_source, p);
 
         % delay source signal
         %     p.x_source = delay_source_signal(p.x_source,p);
