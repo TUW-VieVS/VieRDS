@@ -11,7 +11,8 @@ s1:
   fluxdensity_system: 60
   f0: [3032.40]
   number_of_bits: 1
-  signal_type_target_source: gaussian-white-noise
+  signal_type_target_source: multi-point-gaussian-white-noise
+  multi_point_source_file_name: 2358+189.src
   source_name: 2358+189
 s2:
   date_vec: [2020,1,28,17,30,00]
@@ -24,9 +25,6 @@ s2:
   fluxdensity_system: 60
   f0: [3032.40]
   number_of_bits: 1
-  signal_type_target_source: gaussian-white-noise
+  signal_type_target_source: multi-point-gaussian-white-noise
+  multi_point_source_file_name: 2358+189.src
   source_name: 2358+189
-
-
-
-

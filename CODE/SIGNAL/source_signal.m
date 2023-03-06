@@ -24,7 +24,7 @@ if strcmp( p.signal_type_target_source, 'multi-point-gaussian-white-noise')
     % check if MPS data exists
     if isfield(p,'StaSourceID')
         % unique source indices
-        p.source_indices = unique(p.StaSourceID);
+        p.source_indices = unique(p.StaSourceID(:,2));
 
         % number of unique point sources
         p.num_sources = length(p.source_indices);
