@@ -72,9 +72,10 @@ for i = 1:N
     
     % calculate s_X in vector form by scaling s0 with length of projection [m]
     p_tm(i).s_X_vec = p_tm(i).s_X_scalar*s0;
-    
+
     % geo center delay [sec]
     p_tm(i).tau_geocenter = p_tm(i).s_X_scalar/physconst('LightSpeed');
+    fprintf('\t %d: tau geocenter: %f [ns]\n', i, p_tm(i).tau_geocenter*10^9)
     
     % delta geo center delay [sec]
     p_tm(i).delta_tau_geocenter = p_tm(i).tau_geocenter - p_tm(1).tau_geocenter;

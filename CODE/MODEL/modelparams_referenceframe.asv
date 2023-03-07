@@ -42,10 +42,8 @@ fprintf('\t \t %f\n',p.X_trf)
 [p.s_crf_sph, p.s_crf_cart, p.take_CRF_coord] = create_sr_coord(p, r);
 
 % print source coordinates:
-fprintf('\t source coordinates (deg):\n')
+fprintf('\t source coordinates:\n')
 fprintf('\t \t %f\n', rad2deg(p.s_crf_sph))
-fprintf('\t source coordinates (mm):\n')
-fprintf('\t \t %f\n', p.s_crf_cart*10^3)
 
 % time stemps for model parameter calculation
 t_m = get_timemodel_ref_dates( p.date_datetime,p.date_datetime_stop,p.time_model_period_before_scan_start_sec, p.time_model_discretisation_intervall_sec, p.tm_adjustable_time_offset, p.tm_reference_point_type );

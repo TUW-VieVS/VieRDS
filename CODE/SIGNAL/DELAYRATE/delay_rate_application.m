@@ -94,6 +94,10 @@ if strcmp(p.delay_rate_application_method,'single-side-band-modulation')
     dtaui = interp1(dates,dtau,xq,'pchip','extrap');
 
     fprintf('Single-sideband modulation:\n')
+    fprintf('\t f0: %f [MHz]\n', p.f0*10^-6)    
+    fprintf('\t dtaui: %f, %f, %f, ..., %f [ns]\n', dtaui(1)*10^9, dtaui(2)*10^9, dtaui(3)*10^9, dtaui(end)*10^9)
+    fprintf('\t Tx: %f [ns]\n', p.sampling_interval*10^9)    
+   
     [y] = single_side_band_modulation(x,p.f0,dtaui,p.sampling_interval);
 
 end

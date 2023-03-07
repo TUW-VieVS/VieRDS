@@ -86,7 +86,7 @@ parfor i=1:Ndnu
         n0 = round(dni);
         dn0 = dni-n0;
         phi0 = -2*pi*fa*dni*Tx;
-        [Out{i}] = delay3step(In{i},n0,dn0,phi0,ntaps,r)
+        [Out{i}] = delay3step(In{i},n0,dn0,phi0,ntaps,r,0)
 %         Out{i} = In{i};
         
 %         % apply constant phase offset to to all spectral components. Since the

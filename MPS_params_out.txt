@@ -1,0 +1,130 @@
+MPS:
+
+source ra,de: 0.004990, 0.335849 [rad]
+
+Signal arrives at station:
+	 tau: 6758473.228781 [ns]
+	 delay rate: -1106.016198 [ns/s]
+	 sample_delay: 108135.571660 []
+	 sample_delay_rounded: 108136.000000 []
+	 sample_frac_delay: -0.428340 []
+	 phase_offset_fa: -128600217.677327 [rad]
+	 tau_phase_offset_fa: 0.000000 [rad] 
+
+Signal arrives at station:
+	 tau: -18926863.756907 [ns]
+	 delay rate: 480.696825 [ns/s]
+	 sample_delay: -302829.820111 []
+	 sample_delay_rounded: -302830.000000 []
+	 sample_frac_delay: 0.179889 []
+	 phase_offset_fa: 360140332.985588 [rad]
+	 tau_phase_offset_fa: 0.000000 [rad] 
+	 
+
+Start model calculation for CH: 1/1
+
+	 source ra,de: 0.004990, 0.335849 [rad]
+please check for new leap second TAI-UTC tai_utc.m:
+  last leap sec: 58118 [mjd]
+  date of observation: 58877 [mjd]
+Loading EOP file: finals_all_IAU2000.txt
+Scan start 28-Jan-2020 17:30:00 (wave-front goes through geo center)
+	 signal arrival time: 2020, 1, 28,17, 29, 59.993242 
+Signal arrives at station:
+	 tau: 6758473.228781 [ns]
+	 delay rate: -1106.016198 [ns/s]
+	 sample_delay: 108135.571660 []
+	 sample_delay_rounded: 108136.000000 []
+	 sample_frac_delay: -0.428340 []
+	 phase_offset_fa: -128600217.677327 [rad]
+	 tau_phase_offset_fa: 0.000000 [rad] 
+Phase cal reptition rate is zero or negativ Hz, pcal signal not simulated
+Signal arrives at station:
+	 tau: 0.000000 [ns]
+	 delay rate: 0.000000 [ns/s]
+	 sample_delay: 0.000000 []
+	 sample_delay_rounded: 0.000000 []
+	 sample_frac_delay: 0.000000 []
+	 phase_offset_fa: -0.000000 [rad]
+	 tau_phase_offset_fa: 0.000000 [rad] 
+	 source ra,de: 0.004990, 0.335849 [rad]
+please check for new leap second TAI-UTC tai_utc.m:
+  last leap sec: 58118 [mjd]
+  date of observation: 58877 [mjd]
+Loading EOP file: finals_all_IAU2000.txt
+Scan start 28-Jan-2020 17:30:00 (wave-front goes through geo center)
+	 signal arrival time: 2020, 1, 28,17, 30, 0.018927 
+Signal arrives at station:
+	 tau: -18926863.756907 [ns]
+	 delay rate: 480.696825 [ns/s]
+	 sample_delay: -302829.820111 []
+	 sample_delay_rounded: -302830.000000 []
+	 sample_frac_delay: 0.179889 []
+	 phase_offset_fa: 360140332.985588 [rad]
+	 tau_phase_offset_fa: 0.000000 [rad] 
+Phase cal reptition rate is zero or negativ Hz, pcal signal not simulated
+Signal arrives at station:
+	 tau: 0.000000 [ns]
+	 delay rate: 0.000000 [ns/s]
+	 sample_delay: 0.000000 []
+	 sample_delay_rounded: 0.000000 []
+	 sample_frac_delay: 0.000000 []
+	 phase_offset_fa: -0.000000 [rad]
+	 tau_phase_offset_fa: 0.000000 [rad] 
+	 
+
+default:
+	 
+	source ra,de: 0.004990, 0.335849 [rad]
+ 
+    
+Signal arrives at station:
+	 tau: 6758473.225468 [ns]
+	 delay rate: -1106.016197 [ns/s]
+	 sample_delay: 108135.571607 []
+	 sample_delay_rounded: 108136.000000 []
+	 sample_frac_delay: -0.428393 []
+	 phase_offset_fa: -128600217.614292 [rad]
+	 tau_phase_offset_fa: 0.000000 [rad] 
+	 
+Signal arrives at station:
+	 tau: -18926863.755467 [ns]
+	 delay rate: 480.696829 [ns/s]
+	 sample_delay: -302829.820087 []
+	 sample_delay_rounded: -302830.000000 []
+	 sample_frac_delay: 0.179913 []
+	 phase_offset_fa: 360140332.958192 [rad]
+	 tau_phase_offset_fa: 0.000000 [rad] 
+	 
+	 source ra,de: 0.004990, 0.335849 [rad]
+please check for new leap second TAI-UTC tai_utc.m:
+  last leap sec: 58118 [mjd]
+  date of observation: 58877 [mjd]
+Loading EOP file: finals_all_IAU2000.txt
+Scan start 28-Jan-2020 17:30:00 (wave-front goes through geo center)
+	 signal arrival time: 2020, 1, 28,17, 29, 59.993242 
+Phase cal reptition rate is zero or negativ Hz, pcal signal not simulated
+Signal arrives at station:
+	 tau: 6758473.225468 [ns]
+	 delay rate: -1106.016197 [ns/s]
+	 sample_delay: 108135.571607 []
+	 sample_delay_rounded: 108136.000000 []
+	 sample_frac_delay: -0.428393 []
+	 phase_offset_fa: -128600217.614292 [rad]
+	 tau_phase_offset_fa: 0.000000 [rad] 
+	 source ra,de: 0.004990, 0.335849 [rad]
+please check for new leap second TAI-UTC tai_utc.m:
+  last leap sec: 58118 [mjd]
+  date of observation: 58877 [mjd]
+Loading EOP file: finals_all_IAU2000.txt
+Scan start 28-Jan-2020 17:30:00 (wave-front goes through geo center)
+	 signal arrival time: 2020, 1, 28,17, 30, 0.018927 
+Phase cal reptition rate is zero or negativ Hz, pcal signal not simulated
+Signal arrives at station:
+	 tau: -18926863.755467 [ns]
+	 delay rate: 480.696829 [ns/s]
+	 sample_delay: -302829.820087 []
+	 sample_delay_rounded: -302830.000000 []
+	 sample_frac_delay: 0.179913 []
+	 phase_offset_fa: 360140332.958192 [rad]
+	 tau_phase_offset_fa: 0.000000 [rad] 

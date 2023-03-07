@@ -8,6 +8,7 @@ function [p] = signal_operations_wrapper(params_common,p,contr)
 
 %%%%%%%% telescope
 
+fprintf('Generate telescope signals\n')
 % telescope signals
 p = telescope_signals(p);
 
@@ -38,6 +39,7 @@ if p.mpsd_i==1
                 % assign kinematic params from MPS struct for delay_rate_application to "global" station params
                 p.p_tm = p.MPS(isrc).p_tm;
 
+                fprintf('Delay rate application for MPS %d\n',isrc)
                 % delay rate application
                 p.x_source(isrc,:) = delay_rate_application(p.x_source(isrc,:), p);
             else
@@ -55,8 +57,9 @@ if p.mpsd_i==1
                 % assign kinematic params from MPS struct for delay3step to "global" station struct
                 p.signal_arrives_at_station = p.MPS(isrc).signal_arrives_at_station;
 
+                fprintf('Relative Delay application for MPS %d\n',isrc)
                 % delay source signal by relative delays
-                [p.x_source(isrc,:)] = delay3step(p.x_source(isrc,:), p.signal_arrives_at_station.dsample_delay_rounded, p.signal_arrives_at_station.dsample_frac_delay, p.signal_arrives_at_station.dphase_offset_fa,  p.fractional_delay_filter_ntaps, p.fractional_delay_filter_stopBandAtt);
+                [p.x_source(isrc,:)] = delay3step(p.x_source(isrc,:), p.signal_arrives_at_station.dsample_delay_rounded, p.signal_arrives_at_station.dsample_frac_delay, p.signal_arrives_at_station.dphase_offset_fa,  p.fractional_delay_filter_ntaps, p.fractional_delay_filter_stopBandAtt, 1);
 
             end
 
@@ -66,8 +69,9 @@ if p.mpsd_i==1
                 p.signal_arrives_at_station = p.MPS(isrc).signal_arrives_at_station;
 
                 % delay source signal
+                fprintf('Delay application for MPS %d\n',isrc)
                 %     p.x_source = delay_source_signal(p.x_source,p);
-                [p.x_source(isrc,:)] = delay3step(p.x_source(isrc,:), p.signal_arrives_at_station.sample_delay_rounded, p.signal_arrives_at_station.sample_frac_delay, p.signal_arrives_at_station.phase_offset_fa,  p.fractional_delay_filter_ntaps, p.fractional_delay_filter_stopBandAtt);
+                [p.x_source(isrc,:)] = delay3step(p.x_source(isrc,:), p.signal_arrives_at_station.sample_delay_rounded, p.signal_arrives_at_station.sample_frac_delay, p.signal_arrives_at_station.phase_offset_fa,  p.fractional_delay_filter_ntaps, p.fractional_delay_filter_stopBandAtt,1 );
 
             else
                 % print
@@ -120,11 +124,13 @@ else
         fprintf('non-zero baseline simulation selected: station delay and delay rate will be applied\n')
 
         % delay rate application
+        fprintf('Delay rate application\n')
         p.x_source = delay_rate_application(p.x_source, p);
 
         % delay source signal
         %     p.x_source = delay_source_signal(p.x_source,p);
-        [p.x_source] = delay3step(p.x_source, p.signal_arrives_at_station.sample_delay_rounded, p.signal_arrives_at_station.sample_frac_delay, p.signal_arrives_at_station.phase_offset_fa,  p.fractional_delay_filter_ntaps, p.fractional_delay_filter_stopBandAtt);
+        fprintf('Delay application')
+        [p.x_source] = delay3step(p.x_source, p.signal_arrives_at_station.sample_delay_rounded, p.signal_arrives_at_station.sample_frac_delay, p.signal_arrives_at_station.phase_offset_fa,  p.fractional_delay_filter_ntaps, p.fractional_delay_filter_stopBandAtt, 1);
 
     end
 

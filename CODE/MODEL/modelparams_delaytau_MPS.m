@@ -89,6 +89,8 @@ tau = p_tm.signal_arrival_station_first_sample(id).tau_geocenter;
 ntau = p_tm.signal_arrival_station_first_sample(id).sample_tau_geocenter;
 dr = p_tm.signal_arrival_station_first_sample(id).delay_rate;
 
+fprintf('delay when wavefront arrives at station: %f [ns]\n', tau*10^9)
+
 % determine phase offset at sky frequency
 Tx = sampling_interval;
 [phi0_rad,phi0_sample] = skyFreqPhaseOffset(fa,tau,Tx);

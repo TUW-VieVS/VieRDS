@@ -51,26 +51,24 @@ if s.mpsd_i == 1
 
                 if i==1
                     s = modelparams_referenceframe(s, ref_frame, controling);
-                    % calculate p_tm struct per souce
-                    tmp = modelparams_referenceframe(s, ref_frame, controling);
                 else
                     % calculate p_tm struct per souce
                     tmp = modelparams_referenceframe(s, ref_frame, controling);
                 end
 
                 % source coordinates
-                s.MPS(i).s_crf_sph = tmp.s_crf_sph;
+                s.MPS(i).s_crf_sph = s.s_crf_sph;
 
                 % CRF flag
-                s.MPS(i).take_CRF_coord = tmp.take_CRF_coord;
+                s.MPS(i).take_CRF_coord = s.take_CRF_coord;
 
                 % signal arrival time at station
-                s.MPS(i).signal_arrival_time = tmp.signal_arrival_time;
-                s.MPS(i).signal_arrival_time_offset = tmp.signal_arrival_time_offset;
-                s.MPS(i).index_for_ptm_signal_arrivaL_time = tmp.index_for_ptm_signal_arrivaL_time;
+                s.MPS(i).signal_arrival_time = s.signal_arrival_time;
+                s.MPS(i).signal_arrival_time_offset = s.signal_arrival_time_offset;
+                s.MPS(i).index_for_ptm_signal_arrivaL_time = s.index_for_ptm_signal_arrivaL_time;
 
                 % kinematic model params
-                s.MPS(i).p_tm = tmp.p_tm;
+                s.MPS(i).p_tm = s.p_tm;
 
                 % delay (time dependent)
                 [s.MPS(i).tau, s.MPS(i).signal_arrives_at_station  ] = modelparams_delaytau_MPS(s.MPS(i).p_tm, s.sampling_interval, s.delay_rate_interpolation_interval, s.delay_rate_interpolation_method, s.MPS(i).index_for_ptm_signal_arrivaL_time, s.fa);

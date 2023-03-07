@@ -12,7 +12,7 @@ function [s_crf_sph, s_crf_cart, take_CRF_coord] = create_sr_coord(p, r)
 
 % print warning that s_crf_cart as input is not supported
 if isfield(p,'s_crf_cart')
-    warning('s_crf_cart as input is not supported, please use spherical coordinates (s_crf_sph)')
+%     warning('s_crf_cart as input is not supported, please use spherical coordinates (s_crf_sph)')
 end
 
 % take explicitly set CRF coordinates

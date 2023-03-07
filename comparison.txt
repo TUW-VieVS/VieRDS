@@ -1,0 +1,73 @@
+MPS:
+	 signal arrival time: 2020, 1, 28,17, 29, 59.993242 
+	 signal arrival time: 2020, 1, 28,17, 30, 0.018927 
+     
+     delay when wavefront arrives at station: 6758473.228781 [ns]
+	 delay when wavefront arrives at station: -18926863.756907 [ns]
+	 
+     1: tau geocenter: 6758465.750306 [ns]
+	 2: tau geocenter: 6758189.118074 [ns]
+	 3: tau geocenter: 6757912.482580 [ns]
+	 4: tau geocenter: 6757635.843822 [ns]
+Scan start 28-Jan-2020 17:30:00 (wave-front goes through geo center)
+	 signal arrival time: 2020, 1, 28,17, 29, 59.993242 
+	 1: tau geocenter: 6758473.228781 [ns]
+	 2: tau geocenter: 6758196.596638 [ns]
+	 3: tau geocenter: 6757919.961231 [ns]
+	 4: tau geocenter: 6757643.321866 [ns]
+	 1: tau geocenter: 6758334.913117 [ns]
+	 2: tau geocenter: 6758058.279343 [ns]
+	 3: tau geocenter: 6757781.642305 [ns]
+	 4: tau geocenter: 6757505.001308 [ns]
+	 
+     1: tau geocenter: -18926872.859295 [ns]
+	 2: tau geocenter: -18926752.627997 [ns]
+	 3: tau geocenter: -18926632.391792 [ns]
+	 4: tau geocenter: -18926512.150682 [ns]
+Scan start 28-Jan-2020 17:30:00 (wave-front goes through geo center)
+	 signal arrival time: 2020, 1, 28,17, 30, 0.018927 
+	 1: tau geocenter: -18926863.756907 [ns]
+	 2: tau geocenter: -18926743.525238 [ns]
+	 3: tau geocenter: -18926623.288662 [ns]
+	 4: tau geocenter: -18926503.047180 [ns]
+	 1: tau geocenter: -18926803.641685 [ns]
+	 2: tau geocenter: -18926683.407563 [ns]
+	 3: tau geocenter: -18926563.168534 [ns]
+	 4: tau geocenter: -18926442.924599 [ns]
+
+default:
+	 signal arrival time: 2020, 1, 28,17, 29, 59.993242 
+	 signal arrival time: 2020, 1, 28,17, 30, 0.018927 
+
+	 delay when wavefront arrives at station: 6758473.225468 [ns]
+     delay when wavefront arrives at station: -18926863.755467 [ns]
+
+     1: tau geocenter: 6758465.746993 [ns]
+	 2: tau geocenter: 6758189.114761 [ns]
+	 3: tau geocenter: 6757912.479267 [ns]
+	 4: tau geocenter: 6757635.840509 [ns]
+Scan start 28-Jan-2020 17:30:00 (wave-front goes through geo center)
+	 signal arrival time: 2020, 1, 28,17, 29, 59.993242 
+	 1: tau geocenter: 6758473.225468 [ns]
+	 2: tau geocenter: 6758196.593325 [ns]
+	 3: tau geocenter: 6757919.957918 [ns]
+	 4: tau geocenter: 6757643.318553 [ns]
+	 1: tau geocenter: 6758334.909805 [ns]
+	 2: tau geocenter: 6758058.276030 [ns]
+	 3: tau geocenter: 6757781.638992 [ns]
+	 4: tau geocenter: 6757504.997995 [ns]
+	 
+     1: tau geocenter: -18926872.857855 [ns]
+	 2: tau geocenter: -18926752.626557 [ns]
+	 3: tau geocenter: -18926632.390352 [ns]
+	 4: tau geocenter: -18926512.149242 [ns]
+Scan start 28-Jan-2020 17:30:00 (wave-front goes through geo center)
+	 signal arrival time: 2020, 1, 28,17, 30, 0.018927 
+	 1: tau geocenter: -18926863.755467 [ns]
+	 2: tau geocenter: -18926743.523798 [ns]
+	 3: tau geocenter: -18926623.287222 [ns]
+	 4: tau geocenter: -18926503.045740 [ns]
+	 1: tau geocenter: -18926803.640246 [ns]
+	 2: tau geocenter: -18926683.406123 [ns]
+	 3: tau geocenter: -18926563.167094 [ns]
+	 4: tau geocenter: -18926442.923159 [ns]
