@@ -1,4 +1,5 @@
 clear all;
+format long
 
 % convert source coordinates
 
@@ -15,9 +16,9 @@ for id = 1
     % offset
     for id_off=1
         % ra milliarcsec offset
-        source(id).ra.offset(id_off).milliarcsec = -5;
+        source(id).ra.offset(id_off).milliarcsec = 50.0;
         % de milliarcsec offset
-        source(id).de.offset(id_off).milliarcsec = -5;
+        source(id).de.offset(id_off).milliarcsec = 50.0;
         
         % ra: deg2hms
         [source(id).ra.hms(1),source(id).ra.hms(2),source(id).ra.hms(3)] = deg2hms(source(id).ra.deg);
@@ -39,8 +40,8 @@ for id = 1
         
         if id_off == 1
             fprintf('%s\n',source(id).name)
-            fprintf('%02dh%02dm%02fs, %02dd%02d''%02f"  \n',source(id).ra.hms, source(id).de.dms)            
+            fprintf('%02dh%02dm%02.12fs, %02dd%02d''%02.12f"  \n',source(id).ra.hms, source(id).de.dms)            
         end
-        fprintf('%02dh%02dm%02fs, %02dd%02d''%02f"  \n',source(id).ra.offset(id_off).hms, source(id).de.offset(id_off).dms) 
+        fprintf('%02dh%02dm%02.12fs, %02dd%02d''%02.12f"  \n',source(id).ra.offset(id_off).hms, source(id).de.offset(id_off).dms) 
     end
 end
