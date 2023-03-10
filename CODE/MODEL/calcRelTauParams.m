@@ -16,5 +16,9 @@ for irp = 1:Nrp
 
     % calculate delta
     c.(delta_relative_param) = refval.(relative_params{irp}) - c.(relative_params{irp});
+
+    if strcmp(relative_params{irp}, 'tau')
+        fprintf('Relative delay: %f (ns)', c.(delta_relative_param)*10^9)
+    end
 end
 

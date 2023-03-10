@@ -1,0 +1,72 @@
+delta: 0.0 mas
+
+Relative delay: 0.000000 (ns)Relative delay: -311.876337 (ns)
+
+
+delta: 0.1 mas 
+
+
+Relative delay: 0.000000 (ns)Relative delay: -311.865957
+
+1: tau=-311.865957
+2: tau=-311.8659375 (true)
+
+Relative delay: 0.000000 (ns)Relative delay: -0.007982 (ns)Relative delay: -311.876337 (ns)Relative delay: -311.873938 (ns)
+
+1: tau1=311.876337
+2: tau2=311.865956
+3: tau12=tau1-tau2=0.010380999999995
+
+
+delta: 0.2 mas
+
+Relative delay: 0.000000 (ns)Relative delay: -311.855576 (ns)
+
+Relative delay: 0.000000 (ns)Relative delay: -0.015964 (ns)Relative delay: -311.876337 (ns)Relative delay: -311.871539 (ns)
+
+1: tau1= 311.876337
+2: tau2= 311.855575
+3: tau3= 0.020761999999991
+
+
+delta: 0.3 mas
+
+Relative delay: 0.000000 (ns)Relative delay: -311.845195 (ns)
+
+Relative delay: 0.000000 (ns)Relative delay: -0.023945 (ns)Relative delay: -311.876337 (ns)Relative delay: -311.869140 (ns)
+
+
+delta: 0.4 mas
+
+Relative delay: 0.000000 (ns)Relative delay: -311.834814 (ns)
+
+Relative delay: 0.000000 (ns)Relative delay: -0.031927 (ns)Relative delay: -311.876337 (ns)Relative delay: -311.866741 (ns)
+
+
+delta: 0.5 mas
+
+Relative delay: 0.000000 (ns)Relative delay: -311.824433 (ns)
+
+Relative delay: 0.000000 (ns)Relative delay: -311.824433 (ns)
+
+
+delta: 1.0 mas
+
+Relative delay: 0.000000 (ns)Relative delay: -311.772529 (ns)
+
+
+
+delta: 2.0 mas
+
+Relative delay: 0.000000 (ns)Relative delay: -311.668721 (ns)
+
+
+delta: 3.0 mas
+
+Relative delay: 0.000000 (ns)Relative delay: -311.564913 (ns)
+
+
+delta: 4.0 mas
+
+Relative delay: 0.000000 (ns)Relative delay: -311.461105 (ns)
+
