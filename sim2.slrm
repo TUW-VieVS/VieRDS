@@ -1,0 +1,24 @@
+#!/bin/sh
+#SBATCH -J simVieRDS                     # job name
+#SBATCH -N 1                    # number of nodes
+#SBATCH --ntasks-per-node=1        # uses all cpus of one node
+#SBATCH --threads-per-core=1
+#SBATCH --qos p71338_0096
+
+# load matlab
+module load Matlab/v9.13_REL2022b
+
+# 
+start=`date +%s.%N`
+
+# run matlab
+matlab -nodisplay -r "parpool('Processes',7); vierds_main; exit;"
+
+#
+end=`date +%s.%N`
+
+runtime=$( echo "$end - $start" | bc -l )
+
+echo "Run time (with initialization): $runtime (sec)"
+
+exit
