@@ -1,8 +1,12 @@
-function vierds(yaml_file_name)
+function vierds(yaml_file_name,seed)
 tic;
 
 % Initializes generator based on the current time, resulting in a different sequence of random numbers after each call to rng
-rng('shuffle')
+if nargin == 1
+   rng('shuffle')
+else
+   rng(seed)
+end
 
 %% start of code
 fprintf('start raw data simulation: %s\n',datetime('now'));
@@ -50,7 +54,8 @@ fprintf('\n')
 params_common = cell(NSim,1);
 
 % loop through simulation
-for iSim = 1:NSim
+% for iSim = 1:NSim
+parfor iSim = 1:NSim
     
     fprintf('\nStart model calculation for CH: %.0f/%.0f\n\n',iSim,NSim)
     % model params per simulation
@@ -78,7 +83,8 @@ fprintf('::::::::::::::::::::::::\n')
 fprintf('\n')
 
 % loop through simulation
-for iSim = 1:NSim
+% for iSim = 1:NSim
+parfor iSim = 1:NSim
     fprintf('Ch %.0f\n',iSim)
     % signals per simulation
     SIM_sta{iSim} = bbs_signal(SIM_sta{iSim}, params_common{iSim}, controling);
