@@ -1,7 +1,7 @@
 function vierds(yaml_file_name,seed)
 tic;
 
-% Initializes generator based on the current time, resulting in a different sequence of random numbers after each call to rng
+% If no specific seed is set, initializes generator based on the current time, resulting in a different sequence of random numbers after each call to rng
 if nargin == 1
    rng('shuffle')
 else

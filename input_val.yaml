@@ -3,8 +3,8 @@ setup:
 s1:
   date_vec: [2020,1,28,17,30,00]
   station_name: S1
-  station_name_8character: KOKEE12M
-  station_name_trf_coord: K2
+  station_name_8character: WETT12M
+  station_name_trf_coord: Ws
   sampling_frequency: 64
   scan_length: 1
   fluxdensity_targetsource: 20
