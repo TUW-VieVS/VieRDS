@@ -82,23 +82,16 @@ fprintf(':::::Signal module::::::\n')
 fprintf('::::::::::::::::::::::::\n')
 fprintf('\n')
 
+% create seeds for parfor loop
+seeds = randi(10000000,1,NSim);
 % loop through simulation
-if(exist('seed','var'))
-    % check if a seed was passed as input
-    % for iSim = 1:NSim
-    parfor iSim = 1:NSim
-    	fprintf('Ch %.0f\n',iSim)
-    	% signals per simulation
-    	% in case stations are simulated on different nodes and calculation is parallel, ensure
-    	% that the source signals for all channels are created from the same stream of random numbers to get a
-    	% result that can be correlated
-       	SIM_sta{iSim} = bbs_signal(SIM_sta{iSim}, params_common{iSim}, controling,seed.*iSim);
-    end
-else
-    % for iSim = 1:NSim
-    parfor iSim = 1:NSim
-    	SIM_sta{iSim} = bbs_signal(SIM_sta{iSim}, params_common{iSim}, controling);
-    end
+% for iSim = 1:NSim
+parfor iSim = 1:NSim
+    % give each channel an unique PRNG stream
+    rng(seeds(iSim));
+    fprintf('Ch %.0f\n',iSim)
+    % signals per simulation
+    SIM_sta{iSim} = bbs_signal(SIM_sta{iSim}, params_common{iSim}, controling);
 end
 
 %% vdif
