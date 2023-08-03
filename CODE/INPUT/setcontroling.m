@@ -3,7 +3,7 @@ function controling = setcontroling
 
 %% folder
 % create name for output folder based on time-tag
-controling.current_date = char(datetime('now','Format','yyyy_DDD_HH_mm_ss'));
+controling.current_date = char(datetime('now','Format','yyyy_DDD_HH_mm_ss_SSS'));
 controling.output_folder = 'OUT/';
 controling.output_folder_long = [controling.output_folder, controling.current_date,'/'];
 

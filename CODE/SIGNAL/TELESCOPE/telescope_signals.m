@@ -6,6 +6,7 @@ function p = telescope_signals(p)
 
 % signal generation
 x = gennoise( 1, p.num_samples_scan );
+% x = sparse( 1, p.num_samples_scan );
 
 % create standard normal distribution
 p.x_system = p.sigma_system*(x - mean(x))/sqrt(var(x));

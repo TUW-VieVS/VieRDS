@@ -12,7 +12,7 @@ module load Matlab/v9.13_REL2022b
 start=`date +%s.%N`
 
 # run matlab
-matlab -nodisplay -r "create_input_val; parpool('Processes',6); vierds_main; exit;"
+matlab -nodisplay -r "create_input_val2; parpool('Processes',4); vierds_main; exit;"
 
 #
 end=`date +%s.%N`
