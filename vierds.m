@@ -88,7 +88,7 @@ seeds = randi(10000000,1,NSim);
 % for iSim = 1:NSim
 parfor iSim = 1:NSim
     % give each channel an unique PRNG stream
-    rng(seeds(iSim));
+    rng(seeds(iSim),'threefry');
     fprintf('Ch %.0f\n',iSim)
     % signals per simulation
     SIM_sta{iSim} = bbs_signal(SIM_sta{iSim}, params_common{iSim}, controling);

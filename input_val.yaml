@@ -2,7 +2,7 @@ setup:
   zero_bl: 0
 s1:
   date_vec: [2020,1,28,17,30,00]
-  station_name: S1
+  station_name: S2
   station_name_8character: KOKEE12M
   station_name_trf_coord: K2
   sampling_frequency: 64
@@ -13,4 +13,4 @@ s1:
   number_of_bits: 1
   signal_type_target_source: multi-point-gaussian-white-noise
   source_name: 0026+892
-  mulit_point_source_file_name: 0026+892.src
+  multi_point_source_file_name: 0026+892.src
