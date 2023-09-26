@@ -9,8 +9,8 @@ s1:
   scan_length: 1
   fluxdensity_targetsource: 20
   fluxdensity_system: 60
-  f0: [3032.40,3064.40,3096.40,3224.40,3320.40,3384.40,3448.40,3480.40]
+  f0: [3032.40]
   number_of_bits: 1
-  signal_type_target_source: multi-point-gaussian-white-noise
+  signal_type_target_source: gaussian-white-noise
   source_name: 0026+892
-  multi_point_source_file_name: 0026+892.src
+#  multi_point_source_file_name: 0026+892.src

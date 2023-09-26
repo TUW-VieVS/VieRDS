@@ -28,13 +28,7 @@ station_names_trf = string(extractBetween(each_station,2,3));
 station_names_8char = string(extractBetween(each_station,"$SITE = ",";"));
 % extract 2 char and 8 char station names
 
-station_names = strings(length(station_names_trf),1);
-for i = 1:length(station_names)
-    station_names(i) = "S"+i;
-end
-% create array with VieRDS station names (S1, S2, etc.)
-
-station_names = [station_names,station_names_8char,station_names_trf];
+station_names = [station_names_8char,station_names_trf];
 clear station_names_trf;
 clear station_names_8char;
 % merge station names into 1 array, clear the others
@@ -53,15 +47,15 @@ scan_sources = string(extractBetween(each_scan,"source = ",";"));
 
 for i = 1:length(scan_ids)
     scan_stations = string(extractBetween(each_scan(i),"station = "," :"));
-    % extract stations participating on ith scan
+    % extract stations participating in ith scan
     for j = 1:length(scan_stations)
         [row, ~] = find(strcmp(station_names,scan_stations(j)));
         this_station = station_names(row,:);
         yaml_content = yaml_template;
         yaml_content = insertAfter(yaml_content,"date_vec: ","["+scan_starts(i)+"]");
-        yaml_content = insertAfter(yaml_content,"station_name: ",this_station(1));
-        yaml_content = insertAfter(yaml_content,"station_name_8character: ",this_station(2));
-        yaml_content = insertAfter(yaml_content,"station_name_trf_coord: ",this_station(3));
+        yaml_content = insertAfter(yaml_content,"station_name: ",this_station(2));
+        yaml_content = insertAfter(yaml_content,"station_name_8character: ",this_station(1));
+        yaml_content = insertAfter(yaml_content,"station_name_trf_coord: ",this_station(2));
         yaml_content = insertAfter(yaml_content,"source_name: ",scan_sources(i));
         % insert scan specific parameters into yaml file
         namestring = scan_ids(i)+"_"+this_station(3);
