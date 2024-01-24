@@ -1,0 +1,67 @@
+
+-----------------------------------------------------------------
+ Station name: S1
+
+ Station name in TRF: Ws
+
+ Source: 0333+321
+
+ TRF coordinates:                         X: 6371000.000000 m
+                                          Y: 0.000000 m
+                                          Z: 0.000000 m
+
+ CRF coordinates:                        ra: 0.000073 rad
+                                         de: 0.000000 rad
+
+ Sampling freqeuncy                        16.0000000000 MHz
+ Bandwidth                                 8.0000000000 MHz
+ Sampling interval                         62.500000 ns
+ Scan length                               1.000 s
+ Number of bits                            1 
+ Spectral resolution                       0.001000 kHz
+ Number of samples per station             16000000
+ Center frequency of observed signal       3032.400000 MHz
+
+ Target source flux density                20.000 Jy
+ System flux density (SEFD)                100.000 Jy
+ Antenna temperature                       0.362 K
+ System temperature                        1.811 K
+ Effective telescope area                  50.00 m^2
+
+ Sigma (amplitude) target source           8.944e-09 V
+ Sigma (amplitude) target system           2.000e-08 V
+ Power of source                           8.000e-17 W
+ Power of system                           4.000e-16 W
+ Power of pcal signal                      0 W
+ Total power collected                     4.800e-16 W
+ SNR (vs total power):
+   Source                                  16.667%  (-7.782 dB)
+   System noise flux                       83.333%  (-0.792 dB)
+   Pcal                                    0.000%  (-Inf dB)
+ SNR (vs system power):
+   Source                                  20.000%  (-6.990 dB)
+   Pcal                                    0.000%  (-Inf dB)
+
+ No pcal signal added
+
+ t0 (wavefront arrives at station)         2020-03-21  00:05:08.021251
+ Delay geocenter (t0)                          -21251328.840611 ns
+ Delay rate (t0)                               0.012467 ns/s
+ Radial velocity component wrt. source (t0)    0.003737 m/s
+
+ Date (wavefront arrives at geo-center)    21-Mar-2020 00:05:08
+ MJD                                       58929.003565
+ Delay rate application method: single-side-band-modulation
+
+ Applied delays (ns):
+	 source  0.000000
+	 system  0.000000
+	 pcal    0.000000
+	 superp  0.000000
+
+ Applied phase offsets (rad):
+	 source  0.000000
+	 system  0.000000
+	 pcal    0.000000
+	 superp  0.000000
+-----------------------------------------------------------------

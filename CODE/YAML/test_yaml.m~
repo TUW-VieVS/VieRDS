@@ -1,3 +1,0 @@
-clear; close all;
-addpath(genpath('/home/jgruber1/software/yamlmatlab/yaml'));
-ReadYaml('/home/jgruber1/software/yamlmatlab/yaml/Tests/Data/test_import/file1.)

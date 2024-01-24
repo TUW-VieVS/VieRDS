@@ -1,10 +1,11 @@
 setup:
   zero_bl: 0
 s1:
-  date_vec: [2020,1,28,21,13,45]
+  date_vec: [2020,3,21,0,5,8]
   station_name: S1
   station_name_8character: WETTZ13S
   station_name_trf_coord: Ws
+  X_trf: [6371000, 0, 0]
   sampling_frequency: 16
   scan_length: 1
   fluxdensity_targetsource: 20
@@ -18,10 +19,11 @@ s1:
   delay3step_YN: 0
   relative_delays_YN: 1
 s2:
-  date_vec: [2020,1,28,21,13,45]
+  date_vec: [2020,3,21,0,5,8]
   station_name: S2
   station_name_8character: GGAO12M
   station_name_trf_coord: Gs
+  X_trf: [6371000, 0, 0]
   sampling_frequency: 16
   scan_length: 1
   fluxdensity_targetsource: 20

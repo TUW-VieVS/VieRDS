@@ -10,15 +10,15 @@ format long
 for id = 1
 
     source(id).name = '0333+321';
-    source(id).ra.deg = 54.1254483658357;
-    source(id).de.deg = 32.3081511171028;
+    source(id).ra.deg = 90.0;
+    source(id).de.deg = 0.0;
     
     % offset
     for id_off=1
         % ra milliarcsec offset
-        source(id).ra.offset(id_off).milliarcsec = 50.0;
+        source(id).ra.offset(id_off).milliarcsec = 1.0;
         % de milliarcsec offset
-        source(id).de.offset(id_off).milliarcsec = 50.0;
+        source(id).de.offset(id_off).milliarcsec = 60.0;
         
         % ra: deg2hms
         [source(id).ra.hms(1),source(id).ra.hms(2),source(id).ra.hms(3)] = deg2hms(source(id).ra.deg);
